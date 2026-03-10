@@ -1,575 +1,2623 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <!-- Primary Meta Tags -->
+  <title>BLAZE PHOENIX ($BZPX) — The DeFi Protocol Rising on Base</title>
+  <meta name="title" content="BLAZE PHOENIX ($BZPX) — The DeFi Protocol Rising on Base">
+  <meta name="description" content="BLAZE PHOENIX ($BZPX) — An advanced DeFi aggregator and arbitrage protocol on Base Chain. 100B supply. 75% market liquidity. 0% tax.">
+  <meta name="keywords" content="BZPX, BlazePhoenix, DeFi, Base Chain, crypto, DEX aggregator, arbitrage, liquidity, blockchain">
+  <meta name="author" content="BLAZE PHOENIX">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#0052ff">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://blazephoenix.xyz">
+  <meta property="og:title" content="BLAZE PHOENIX ($BZPX) — The DeFi Protocol Rising on Base">
+  <meta property="og:description" content="Advanced DeFi aggregator and arbitrage protocol. 100B supply. 75% liquidity locked. Built on Base.">
+  <meta property="og:image" content="https://blazephoenix.xyz/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:site_name" content="BLAZE PHOENIX">
+  <meta property="og:locale" content="en_US">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://blazephoenix.xyz">
+  <meta property="twitter:title" content="BLAZE PHOENIX ($BZPX) — The DeFi Protocol Rising on Base">
+  <meta property="twitter:description" content="Advanced DeFi aggregator built on Base Chain. 0% tax. 75% liquidity locked.">
+  <meta property="twitter:image" content="https://blazephoenix.xyz/og-image.jpg">
+
+  <link rel="canonical" href="https://blazephoenix.xyz">
+  <link rel="icon" type="image/x-icon" href="https://blazephoenix.xyz/favicon.ico">
+  <link rel="apple-touch-icon" href="https://blazephoenix.xyz/og-image.jpg">
+
+  <!-- Schema.org -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "BLAZE PHOENIX",
+    "url": "https://blazephoenix.xyz",
+    "logo": "https://blazephoenix.xyz/og-image.jpg",
+    "description": "Advanced DeFi aggregator and arbitrage protocol on Base Chain",
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "email": "blazephoenixxyz@proton.me",
+      "contactType": "Customer Service"
+    }
+  }
+  </script>
+
+  <!-- Google Analytics 4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-F84S9TJB2V"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-F84S9TJB2V', { 'anonymize_ip': false });
+  </script>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;600;700;900&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- Preconnect -->
+  <link rel="preconnect" href="https://blazephoenix.xyz">
+  <link rel="dns-prefetch" href="https://blazephoenix.xyz">
+
+  <style>
+    /* === RESET & BASE === */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body.noscroll {
+      overflow: hidden !important;
+      height: 100vh !important;
+      position: fixed !important;
+      width: 100% !important;
+    }
+
+    html, body {
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, #0a1a2e 0%, #16213e 50%, #0f3460 100%);
+      font-family: 'Inter', sans-serif;
+      color: #fff;
+      overflow-x: hidden;
+      scroll-behavior: smooth;
+    }
+
+    .background {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: linear-gradient(135deg, #0a1a2e 0%, #16213e 50%, #0f3460 100%);
+      z-index: -2;
+      pointer-events: none;
+    }
+
+    /* Subtle animated particles */
+    .background::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: radial-gradient(circle, rgba(0,82,255,0.06) 1px, transparent 1px);
+      background-size: 40px 40px;
+      animation: driftGrid 20s linear infinite;
+      pointer-events: none;
+    }
+
+    @keyframes driftGrid {
+      0% { background-position: 0 0; }
+      100% { background-position: 40px 40px; }
+    }
+
+    .container {
+      position: relative;
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 20px;
+      z-index: 1;
+    }
+
+    /* === STICKY LAUNCH APP BUTTON (TOP RIGHT) === */
+    #launch-app-btn {
+      position: fixed;
+      top: 20px;
+      right: 24px;
+      z-index: 9999;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 20px;
+      background: linear-gradient(135deg, #0052ff, #003bbf);
+      color: #fff;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      text-decoration: none;
+      border-radius: 30px;
+      border: 1px solid rgba(255,255,255,0.2);
+      box-shadow: 0 4px 20px rgba(0,82,255,0.5), 0 0 40px rgba(0,82,255,0.2);
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+
+    #launch-app-btn::before {
+      content: '🚀';
+      font-size: 1rem;
+    }
+
+    #launch-app-btn:hover {
+      background: linear-gradient(135deg, #ff4500, #cc3300);
+      box-shadow: 0 4px 30px rgba(255,69,0,0.6), 0 0 60px rgba(255,69,0,0.3);
+      transform: translateY(-2px);
+    }
+
+    /* === HEADER === */
+    header {
+      text-align: center;
+      padding: 50px 0 40px;
+      margin-bottom: 50px;
+      border-bottom: 2px solid rgba(0, 82, 255, 0.4);
+    }
+
+    .logo {
+      width: 220px;
+      height: 220px;
+      margin: 0 auto 30px;
+      border-radius: 50%;
+      border: 6px solid #0052ff;
+      padding: 8px;
+      background: #000;
+      box-shadow: 0 0 80px rgba(0,82,255,0.8), inset 0 0 40px rgba(255,69,0,0.3);
+      overflow: hidden;
+      position: relative;
+    }
+
+    .logo video, .logo img {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      object-fit: cover;
+      border-radius: 50%;
+    }
+
+    .logo video { z-index: 2; }
+    .logo img   { z-index: 1; }
+    .logo video::-webkit-media-controls { display: none !important; }
+
+    h1 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(3rem, 10vw, 5.5rem);
+      background: linear-gradient(135deg, #0052ff 0%, #ff4500 50%, #ffb700 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 12px;
+      letter-spacing: 8px;
+    }
+
+    .subtitle {
+      font-size: 1.2rem;
+      color: #ff4500;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 5px;
+      animation: pulse-text 2.5s ease-in-out infinite;
+    }
+
+    @keyframes pulse-text {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.65; }
+    }
+
+    .header-badges {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 20px;
+    }
+
+    .badge {
+      padding: 6px 16px;
+      border: 1px solid rgba(0,82,255,0.5);
+      border-radius: 20px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: #aac4ff;
+      background: rgba(0,82,255,0.1);
+    }
+
+    .badge.fire { border-color: rgba(255,69,0,0.5); color: #ff9966; background: rgba(255,69,0,0.1); }
+
+    /* === INTRO SECTION === */
+    .intro-section {
+      background: rgba(0, 82, 255, 0.07);
+      border: 2px solid rgba(0,82,255,0.4);
+      border-left: 4px solid #0052ff;
+      border-radius: 12px;
+      padding: 50px 40px;
+      margin: 50px auto;
+      max-width: 960px;
+      text-align: left;
+    }
+
+    .intro-section .intro-kicker {
+      font-size: 0.78rem;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: #0052ff;
+      font-weight: 700;
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .intro-section .intro-kicker::before {
+      content: '';
+      display: inline-block;
+      width: 24px;
+      height: 2px;
+      background: #0052ff;
+    }
+
+    .intro-section h2 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      color: #fff;
+      letter-spacing: 3px;
+      margin-bottom: 24px;
+      text-shadow: none;
+    }
+
+    .intro-section p {
+      font-size: clamp(0.95rem, 2vw, 1.1rem);
+      color: #cdd6f4;
+      line-height: 1.85;
+      margin: 14px 0;
+    }
+
+    .intro-section strong { color: #ff4500; font-weight: 900; }
+
+    .intro-section .intro-quote {
+      font-style: italic;
+      font-size: 1.15rem;
+      color: #ffb700;
+      border-left: 3px solid #ffb700;
+      padding-left: 20px;
+      margin-top: 28px;
+    }
+
+    /* === STATS GRID === */
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 18px;
+      margin: 60px 0;
+      text-align: center;
+    }
+
+    .stat-box {
+      padding: 25px 20px;
+      border: 2px solid rgba(0,82,255,0.5);
+      border-radius: 12px;
+      background: linear-gradient(135deg, rgba(0,82,255,0.12), rgba(0,82,255,0.04));
+      transition: all 0.3s ease;
+      cursor: pointer;
+      box-shadow: 0 0 20px rgba(0,82,255,0.15);
+    }
+
+    .stat-box:hover {
+      transform: translateY(-8px);
+      border-color: #ff4500;
+      background: linear-gradient(135deg, rgba(255,69,0,0.18), rgba(255,69,0,0.06));
+      box-shadow: 0 0 40px rgba(255,69,0,0.4);
+    }
+
+    .stat-box .label {
+      font-size: 0.78rem;
+      color: #0052ff;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+      letter-spacing: 2px;
+      font-weight: 600;
+    }
+
+    .stat-box .value {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.9rem;
+      color: #fff;
+      letter-spacing: 1px;
+    }
+
+    /* === SECTION TITLES === */
+    h2 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(2rem, 6vw, 3rem);
+      color: #ff4500;
+      text-transform: uppercase;
+      margin: 70px 0 40px;
+      text-align: center;
+      letter-spacing: 4px;
+      text-shadow: 0 0 20px rgba(255,69,0,0.35);
+    }
+
+    /* === MARKET DATA CARDS === */
+    .live-data-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 25px;
+      margin: 40px 0;
+    }
+
+    .live-data-card {
+      background: rgba(0,82,255,0.1);
+      border: 2px solid rgba(0,82,255,0.5);
+      border-radius: 14px;
+      padding: 35px;
+      text-align: center;
+      transition: all 0.3s ease;
+      box-shadow: 0 0 25px rgba(0,82,255,0.15);
+    }
+
+    .live-data-card:hover {
+      border-color: #ff4500;
+      transform: scale(1.04);
+      box-shadow: 0 0 50px rgba(255,69,0,0.35);
+    }
+
+    .card-label {
+      font-size: 0.85rem;
+      color: #5b8cff;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+      letter-spacing: 2px;
+      font-weight: 600;
+    }
+
+    .card-value {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 2.4rem;
+      color: #fff;
+      margin: 12px 0;
+      letter-spacing: 1px;
+    }
+
+    .card-subtext { font-size: 0.85rem; color: #888; }
+
+    /* === PROGRESS === */
+    .progress-section {
+      margin: 60px auto;
+      max-width: 800px;
+      padding: 40px;
+      background: rgba(255,69,0,0.07);
+      border: 2px dashed rgba(255,69,0,0.5);
+      border-radius: 14px;
+      text-align: center;
+    }
+
+    .progress-container {
+      width: 100%; height: 42px;
+      background: rgba(0,0,0,0.4);
+      border: 2px solid rgba(255,69,0,0.5);
+      border-radius: 25px;
+      overflow: hidden;
+      margin: 20px 0;
+    }
+
+    .progress-bar {
+      height: 100%; width: 0%;
+      background: linear-gradient(90deg, #ff4500, #ffb700, #ff4500);
+      background-size: 200% 100%;
+      animation: shimmerBar 3s linear infinite;
+      box-shadow: 0 0 25px #ff4500;
+      border-radius: 25px;
+    }
+
+    @keyframes shimmerBar {
+      0% { background-position: 200% center; }
+      100% { background-position: -200% center; }
+    }
+
+    /* === WEALTH SECTION === */
+    .wealth-section {
+      margin: 80px 0;
+      background: rgba(255,69,0,0.08);
+      border: 2px solid rgba(255,69,0,0.5);
+      border-radius: 14px;
+      padding: 50px 30px;
+    }
+
+    .wealth-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 18px;
+      margin: 30px 0;
+    }
+
+    .wealth-card {
+      background: rgba(0,0,0,0.3);
+      border: 1px solid rgba(255,69,0,0.4);
+      border-radius: 10px;
+      padding: 20px;
+      text-align: center;
+      transition: all 0.3s ease;
+    }
+
+    .wealth-card:hover { transform: translateY(-5px); box-shadow: 0 0 30px rgba(255,69,0,0.3); border-color: #ff4500; }
+    .wealth-rank { font-family: 'Bebas Neue', sans-serif; font-size: 2.5rem; color: #0052ff; }
+    .wealth-name { font-weight: 900; font-size: 1.05rem; color: #fff; margin: 6px 0; }
+    .wealth-hold { color: #ff4500; font-weight: 700; font-size: 0.9rem; }
+
+    /* === TX FEED === */
+    .wealth-transfer-container {
+      background: rgba(0,0,0,0.3);
+      border: 1px solid rgba(0,82,255,0.3);
+      border-radius: 12px;
+      padding: 24px;
+      margin-top: 30px;
+    }
+
+    .transfer-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 18px;
+    }
+
+    .transfer-header h3 {
+      font-family: 'JetBrains Mono', monospace;
+      color: #0052ff;
+      font-size: 0.85rem;
+      letter-spacing: 3px;
+    }
+
+    .live-indicator {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.72rem;
+      color: #00ff41;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .blink { animation: blink 1.2s infinite; }
+    @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
+
+    .tx-feed { max-height: 280px; overflow-y: auto; display: flex; flex-direction: column; gap: 6px; }
+    .tx-feed::-webkit-scrollbar { width: 4px; }
+    .tx-feed::-webkit-scrollbar-thumb { background: #0052ff; border-radius: 2px; }
+
+    .tx-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 14px;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 6px;
+      font-size: 0.85rem;
+    }
+
+    .type-buy  { color: #00ff41; font-family: 'JetBrains Mono', monospace; font-weight: 700; font-size: 0.78rem; }
+    .type-sell { color: #ff4500; font-family: 'JetBrains Mono', monospace; font-weight: 700; font-size: 0.78rem; }
+    .tx-value  { font-weight: 900; color: #fff; }
+    .tx-loading{ text-align: center; padding: 30px; color: #555; font-family: 'JetBrains Mono', monospace; font-size: 0.8rem; }
+
+    /* === PHOENIX MODULE === */
+    .px-container {
+      background: rgba(0,0,0,0.45);
+      border: 1px solid rgba(0,82,255,0.35);
+      border-radius: 14px;
+      padding: 32px;
+      margin: 40px 0;
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    .px-header {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.75rem;
+      color: #0052ff;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 24px;
+    }
+
+    .px-core-wrap {
+      display: flex;
+      justify-content: center;
+      margin: 16px 0;
+    }
+
+    .px-core {
+      width: 80px; height: 80px;
+      border: 2px solid #0052ff;
+      border-radius: 50%;
+      position: relative;
+      animation: spinCore 8s linear infinite;
+      box-shadow: 0 0 20px rgba(0,82,255,0.4);
+    }
+
+    .px-core::before {
+      content: '🔥';
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 2rem;
+    }
+
+    @keyframes spinCore {
+      0% { transform: rotate(0deg); box-shadow: 0 0 20px rgba(0,82,255,0.4); }
+      50% { box-shadow: 0 0 40px rgba(255,69,0,0.6); }
+      100% { transform: rotate(360deg); box-shadow: 0 0 20px rgba(0,82,255,0.4); }
+    }
+
+    .px-console {
+      background: rgba(0,0,0,0.5);
+      border: 1px solid rgba(0,82,255,0.25);
+      border-radius: 6px;
+      padding: 16px;
+      font-size: 0.78rem;
+      color: #0052ff;
+      min-height: 48px;
+      margin-bottom: 20px;
+    }
+
+    .px-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      margin-bottom: 16px;
+    }
+
+    .px-stat-box {
+      background: rgba(0,82,255,0.07);
+      border: 1px solid rgba(0,82,255,0.2);
+      border-radius: 8px;
+      padding: 12px;
+      text-align: center;
+    }
+
+    .px-val { display: block; font-size: 1rem; font-weight: 700; color: #fff; }
+    .px-lbl { display: block; font-size: 0.65rem; color: #555; letter-spacing: 1px; margin-top: 4px; }
+    .px-badges { display: flex; gap: 10px; flex-wrap: wrap; justify-content: center; }
+    .px-badge { padding: 6px 12px; border: 1px solid #0052ff; border-radius: 20px; font-size: 0.7rem; color: #0052ff; }
+
+    /* === ACTS === */
+    .acts-section { margin: 80px 0; }
+
+    .act {
+      margin: 40px auto;
+      max-width: 900px;
+      border: 2px solid rgba(0,82,255,0.5);
+      border-radius: 14px;
+      background: rgba(0,82,255,0.07);
+      padding: 40px;
+      transition: all 0.3s ease;
+    }
+
+    .act:hover { border-color: #ff4500; transform: translateX(8px); box-shadow: 0 0 30px rgba(255,69,0,0.2); }
+
+    .act img {
+      width: 100%; height: auto;
+      border-radius: 10px;
+      margin-bottom: 25px;
+      border: 2px solid rgba(0,82,255,0.4);
+    }
+
+    .act:hover img { border-color: #ff4500; }
+
+    .act h3 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.9rem;
+      color: #ff4500;
+      margin-bottom: 14px;
+      letter-spacing: 3px;
+    }
+
+    .act p { font-size: 1.05rem; color: #cdd6f4; line-height: 1.85; }
+
+    /* === LOCKED VAULT SECTION === */
+    .furnace-section {
+      margin: 80px 0;
+      background: rgba(0,243,255,0.04);
+      border: 2px solid rgba(0,243,255,0.3);
+      border-radius: 14px;
+      padding: 50px 30px;
+      text-align: center;
+    }
+
+    .furnace-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      color: #00f3ff;
+      letter-spacing: 4px;
+      margin-bottom: 12px;
+    }
+
+    .burn-desc p {
+      font-size: 1.05rem;
+      color: #aaa;
+      line-height: 1.8;
+      margin: 8px auto;
+      max-width: 700px;
+    }
+
+    .burn-links {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-top: 20px;
+    }
+
+    .burn-link {
+      padding: 8px 20px;
+      border: 1px solid rgba(0,82,255,0.5);
+      border-radius: 20px;
+      color: #5b8cff;
+      text-decoration: none;
+      font-size: 0.82rem;
+      font-weight: 600;
+      letter-spacing: 1px;
+      transition: all 0.3s;
+    }
+
+    .burn-link:hover { border-color: #0052ff; color: #fff; background: rgba(0,82,255,0.2); }
+
+    /* Vesting badge */
+    .vesting-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 18px;
+      background: rgba(255,183,0,0.1);
+      border: 1px solid rgba(255,183,0,0.4);
+      border-radius: 20px;
+      font-size: 0.8rem;
+      color: #ffb700;
+      font-weight: 700;
+      margin: 16px 6px;
+    }
+
+    /* === CTA SECTION === */
+    .cta-section {
+      margin: 80px 0;
+      padding: 60px 30px;
+      text-align: center;
+      background: rgba(0,82,255,0.07);
+      border: 2px solid rgba(0,82,255,0.3);
+      border-radius: 14px;
+    }
+
+    .cta-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(2.5rem, 7vw, 4.5rem);
+      color: #fff;
+      letter-spacing: 6px;
+      margin-bottom: 0;
+    }
+
+    .buttons-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 18px;
+      width: 100%;
+      max-width: 1000px;
+      margin: 30px auto 0;
+    }
+
+    .btn {
+      padding: 14px 28px;
+      border: none;
+      border-radius: 8px;
+      font-size: 0.9rem;
+      font-weight: 700;
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      letter-spacing: 1px;
+      white-space: nowrap;
+    }
+
+    .btn-primary    { background: linear-gradient(135deg, #1f9cf0, #00d4ff); color: #fff; border: 2px solid #1f9cf0; }
+    .btn-secondary  { background: linear-gradient(135deg, #0088cc, #0099ff); color: #fff; border: 2px solid #0088cc; }
+    .btn-base       { background: linear-gradient(135deg, #0052FF, #0043CC); color: #fff; border: 2px solid #0052FF; }
+    .btn-twitter    { background: linear-gradient(135deg, #0f0f0f, #1a1a1a); color: #fff; border: 2px solid #222; }
+    .btn-whitepaper { background: linear-gradient(135deg, #ff6b00, #ff8c00); color: #fff; border: 2px solid #ff6b00; }
+
+    .btn:hover { transform: translateY(-3px); filter: brightness(1.15); }
+    .btn-primary:hover    { box-shadow: 0 10px 30px rgba(31,156,240,0.4); }
+    .btn-secondary:hover  { box-shadow: 0 10px 30px rgba(0,136,204,0.4); }
+    .btn-base:hover       { box-shadow: 0 10px 30px rgba(0,82,255,0.4); }
+    .btn-twitter:hover    { box-shadow: 0 10px 30px rgba(0,0,0,0.6); }
+    .btn-whitepaper:hover { box-shadow: 0 10px 30px rgba(255,107,0,0.4); }
+
+    /* === CONTRACT SECTION === */
+    .contract-section {
+      margin: 80px 0;
+      padding: 40px;
+      background: rgba(0,0,0,0.4);
+      border: 2px solid rgba(0,82,255,0.4);
+      border-radius: 14px;
+      text-align: center;
+      position: relative;
+    }
+
+    .contract-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.8rem;
+      color: #fff;
+      letter-spacing: 3px;
+      margin-bottom: 20px;
+    }
+
+    .contract-address {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: clamp(0.7rem, 1.8vw, 0.95rem);
+      color: #0052ff;
+      word-break: break-all;
+      padding: 20px;
+      background: rgba(0,82,255,0.08);
+      border: 1px solid rgba(0,82,255,0.3);
+      border-radius: 8px;
+      margin: 15px 0;
+      transition: all 0.3s;
+      cursor: pointer;
+    }
+
+    .contract-address:hover { border-color: #0052ff; box-shadow: 0 0 20px rgba(0,82,255,0.3); }
+
+    .contract-links {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 20px;
+    }
+
+    .contract-links a {
+      padding: 8px 18px;
+      border: 1px solid rgba(0,82,255,0.4);
+      border-radius: 20px;
+      color: #5b8cff;
+      text-decoration: none;
+      font-size: 0.82rem;
+      font-weight: 600;
+      transition: all 0.3s;
+    }
+
+    .contract-links a:hover { background: rgba(0,82,255,0.2); color: #fff; border-color: #0052ff; }
+
+    /* Launch APP inside contract section */
+    .contract-launch-app {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 28px;
+      margin-top: 24px;
+      background: linear-gradient(135deg, #ff4500, #ff6b00);
+      color: #fff;
+      font-weight: 700;
+      font-size: 0.9rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      text-decoration: none;
+      border-radius: 8px;
+      border: 2px solid rgba(255,255,255,0.15);
+      box-shadow: 0 0 30px rgba(255,69,0,0.4);
+      transition: all 0.3s;
+    }
+
+    .contract-launch-app:hover {
+      background: linear-gradient(135deg, #0052ff, #003bbf);
+      box-shadow: 0 0 40px rgba(0,82,255,0.5);
+      transform: translateY(-2px);
+    }
+
+    /* === PROTOCOL SECTION === */
+    .protocol-section {
+      margin: 80px 0;
+      background: rgba(0,0,0,0.5);
+      border: 2px solid rgba(0,82,255,0.4);
+      border-radius: 18px;
+      padding: 60px 30px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .protocol-section::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at 10% 20%, rgba(0,82,255,0.12), transparent 40%),
+        radial-gradient(circle at 90% 80%, rgba(255,69,0,0.08), transparent 40%);
+      pointer-events: none;
+    }
+
+    .protocol-inner { position: relative; max-width: 1100px; margin: 0 auto; }
+
+    .protocol-kicker {
+      display: inline-block;
+      font-size: 0.78rem;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: #aaa;
+      border: 1px solid rgba(255,255,255,0.15);
+      padding: 7px 14px;
+      border-radius: 999px;
+      background: rgba(0,0,0,0.25);
+      margin-bottom: 20px;
+    }
+
+    .protocol-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      color: #fff;
+      letter-spacing: 4px;
+      margin-bottom: 14px;
+      text-align: center;
+    }
+
+    .protocol-subtitle {
+      text-align: center;
+      color: #aaa;
+      font-size: 1.05rem;
+      line-height: 1.7;
+      max-width: 760px;
+      margin: 0 auto 50px;
+    }
+
+    .protocol-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 24px;
+    }
+
+    .protocol-card {
+      background: rgba(0,82,255,0.07);
+      border: 2px solid rgba(0,82,255,0.3);
+      border-radius: 14px;
+      padding: 28px;
+      transition: all 0.3s;
+    }
+
+    .protocol-card:hover {
+      border-color: #0052ff;
+      box-shadow: 0 0 40px rgba(0,82,255,0.2);
+      transform: translateY(-4px);
+    }
+
+    .protocol-card-icon { font-size: 2rem; margin-bottom: 14px; }
     
-    <title>⚠️ THE GREAT RESET: SIMULATION LIVE | BLAZE PHOENIX</title>
-    <meta name="title" content="BLAZE PHOENIX - The Great Reset Awakening on Base Chain">
-    <meta name="description" content="The old world is burning. The elites are locking the gates. $BLAZEP is the unauthorized execution of the 1988 prophecy. Join the revolution on Base L2.">
-    
-    <meta name="keywords" content="BLAZEP, BLAZE PHOENIX, Great Reset, 1988 Prophecy, Base Chain, Base L2, Coinbase, Ethereum, ETH, BTC, Bitcoin, Crypto, Cryptocurrency, Memecoin, Altcoin, 100x gem, 1000x potential, Passive Income, Staking, Yield Farming, DeFi, Uniswap, DexScreener, Dextools, Pepe, Brett, Toshi, Degen, Wojak, Shiba Inu, Dogecoin, Floki, Elon Musk, Vitalik Buterin, Satoshi Nakamoto, BlackRock, Bull Run 2025, Zero Tax, LP Burned, Renounced Contract, Safu, Audit, Smart Contract, Solidity, Web3, NFT, Metaverse, AI Crypto, Grok, X, Twitter Crypto, Reddit, WallStreetBets, GameStop, AMC, Short Squeeze, Financial Freedom, Wealth Transfer, Matrix, Blue Pill, Red Pill, Simulation Theory, Awakening, Truth, Conspiracy, New World Order, Davos, WEF, Klaus Schwab, Central Banks, Fiat Collapse, Inflation, Hyperinflation, Gold, Silver, Stocks, Trading, Technical Analysis, Price Prediction, Moonshot, FOMO, FUD, HODL, Diamond Hands, Paper Hands, Whale, Liquidity Pool, Impermanent Loss, Slippage, Gas Limit, Gwei, Base Scan, Etherscan, Blockchain Technology, Smart Money, Insider Trading, Alpha, Signals, Telegram Bot, Sniper Bot, Crypto Twitter, Influencer, Marketing, Viral, Trending, Top Gainer, New Listing, Fair Launch, Presale, Airdrop, Free Money, Rewards, Dividends, Reflections, Auto-burn, Deflationary, Tokenomics, Roadmap, Whitepaper, Community, DAO, Governance, Voting, Snapshot, Tally, Base Ecosystem, Base Summer, Onchain, Build on Base, Base God, Tycoon, Based, Based Dev, Gigachad, Chad, Soyjak, NPC, Normie, Wagie, Exit the Matrix, Financial Independence, Retire Early, FIRE movement, Rich Dad Poor Dad, Investment, Speculation, Gambling, Casino, Roulette, Lottery, Jackpot, Win, Success, Mindset, Hustle, Entrepreneur, Business, Startup, Tech, Future, Innovation, Disruption, Revolution, Freedom, Liberty, Sovereign Individual, Private Key, Cold Storage, Ledger, Trezor, Hardware Wallet, Seed Phrase, Recovery, Security, Hack, Exploit, Scam, Rug Pull, Honeypot, Avoid Scams, Safe Investment, Gem Hunter, Coin Sniper, Token Sniffer, Bubblemaps, Arkham Intelligence, Nansen, Dune Analytics, On-chain Analysis, Whale Alert, Etherscan, Basescan, Block Explorer, Bengal Crypto, India Crypto, Brazil Crypto, Russia Crypto, China Crypto, Japan Crypto, Korea Crypto, Europe Crypto, USA Crypto, Global Currency, Reset Currency, Phoenix Coin, Fire Coin, Burn Coin, 0xB73a62a437be5B091c724B54D6c4d06bBe71d128, 0x0e74E409031bD6F234A429674EC6e68e6c88a7C2, Andrew Jesus, Shadows, Ocult, Illuminati, Masonry, New Age, Cyberpunk, Glitch Art, Vaporwave, Synthetic Wave, Retro Future, Dystopia, Utopia, Anarchy, Libertarian, Agorism, Cypherpunk, Dark Web, Deep Web, Tor, Privacy, Anonymity, Monero, Zcash, Dash, Secret Network, Tornado Cash, Mixer, Bridge, LayerZero, Wormhole, Axelar, Chainlink, Oracle, RWA, Real World Assets, Tokenization, Credit, Debt, Loans, Borrowing, Lending, Aave, Compound, MakerDAO, Curve, SushiSwap, Balancer, 1inch, PancakeSwap, Trader Joe, Raydium, Osmosis, Velodrome, Aerodrome, Alien Base, SwapBased, BaseSwap, RocketSwap, LeetSwap, DackieSwap, KokonutSwap, HorizonDEX, SynthSwap, P2P, Peer to Peer, OTC, Over the Counter, Whitelist, Blacklist, KYC, AML, Compliance, Regulation, SEC, Gary Gensler, Jerome Powell, Janet Yellen, Christine Lagarde, ECB, FED, IMF, World Bank, BIS, Swift, ISO 20022, XRP, XRP Army, Ripple, XLM, Stellar, ALGO, Algorand, XDC, XinFin, IOTA, MIOTA, HBAR, Hedera, QNT, Quant, LCX, CSPR, Casper, MAP, Mapable, GALA, Gala Games, SAND, The Sandbox, MANA, Decentraland, AXS, Axie Infinity, ENJ, Enjin, CHZ, Chiliz, ILV, Illuvium, YGG, Yield Guild Games, GMT, STEPN, APE, ApeCoin, BORED, BAYC, MAYC, Punks, Azuki, Doodles, Moonbirds, CloneX, DeGods, Pudgy Penguins, Checks, Opepen, Jack Butcher, Beeple, Pak, XCOPY, Fidenza, Ringers, Chromie Squiggle, Art Blocks, Generative Art, AI Art, Midjourney, Dall-E, Stable Diffusion, ChatGPT, OpenAI, Sam Altman, Bill Gates, Jeff Bezos, Mark Zuckerberg, Warren Buffett, George Soros, Rothschild, Rockefeller, Morgan, Dupont, Vanderbilt, Astor, Carnegie, Ford, Kennedy, Onassis, Getty, Hearst, Mellon, Hughes, Koch, Walton, Mars, Cargill, Koch, Bloomberg, Knight, Ellison, Page, Brin, Ballmer, Ambani, Adani, Ma, Tata, Slim, Dangote, Arnault, Ortega, Bettencourt, Pinault, Albrecht, Persson, Wertheimer, Quandt, Mars, Thomson, Chearavanont, Sawiris, Rebrab, Dangote, Oppenheimer, Rupert, Wiese, Motsepe, Adenuga, Rabiu, Alakija, Premji, Godrej, Nadar, Mistry, Shanghvi, Kotak, Birla, Poonawalla, Mittal, Hinduja, Burman, Bajaj, Dani, Bangur, Patel, Singh, Lohia, Mariwala, Parekh, Agarwal, Jain, Jindal, Goenka, Tewari, Rai, Chandra, Oberoi, Raheja, Murthy, Nanda, Piramal, Khorakiwala, Kalyani, Hamied, Deshpande, Chiripal, Choksi, Chheda, Chhabria, Chhadva, Chadha, Chaddha, Chawla, Chawl, Chohan, Chopda, Chopra, Chordia, Chotani, Chothani, Chouhan, Chouksey, Choura, Chourasia, Choutala, Chowdary, Chowdhary, Chowdhuey, Chowdhury, Chheda, Chhadva">
-    
-    <meta name="robots" content="index, follow">
-    <meta name="theme-color" content="#000000">
+    .protocol-card h3 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.5rem;
+      color: #0052ff;
+      letter-spacing: 2px;
+      margin-bottom: 12px;
+    }
 
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://blazephoenix.xyz/">
-    <meta property="og:title" content="🔥 SYSTEM FAILURE: The Reset Has Begun">
-    <meta property="og:image" content="https://blazephoenix.xyz/og-image.jpg">
+    .protocol-card p {
+      color: #ccc;
+      font-size: 0.95rem;
+      line-height: 1.7;
+      margin-bottom: 10px;
+    }
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Courier+Prime:wght@400;700&family=Rajdhani:wght@300;500;700;900&family=Noto+Sans+Bengali:wght@400;700&display=swap" rel="stylesheet">
+    .protocol-feat-list {
+      list-style: none;
+      margin-top: 14px;
+    }
 
-        <style>
-        :root {
-            --primary: #0052ff;   /* Azul Base */
-            --accent: #ff4500;    /* Laranja Fogo */
-            --gold: #ffb700;      /* Ouro Elite */
-            --void: #020205;      /* Fundo Profundo */
-            --glass: rgba(10, 15, 30, 0.96);
-            --border: rgba(0, 82, 255, 0.4);
-            --matrix: #00ff41;    /* Verde Hacker */
-        }
+    .protocol-feat-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      padding: 7px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+      font-size: 0.88rem;
+      color: #bbb;
+      line-height: 1.4;
+    }
 
-        * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; margin: 0; padding: 0; }
+    .protocol-feat-list li::before {
+      content: '→';
+      color: #0052ff;
+      font-weight: 700;
+      flex-shrink: 0;
+    }
 
-        html, body {
-            width: 100%; min-height: 100vh;
-            background-color: var(--void);
-            background-image: radial-gradient(circle at 50% 0%, #0a0500 0%, var(--void) 80%);
-            color: #fff; font-family: 'Rajdhani', sans-serif;
-            overflow-x: hidden; overflow-y: auto !important; scroll-behavior: smooth;
-        }
+    .protocol-highlight {
+      margin-top: 40px;
+      padding: 28px;
+      background: rgba(255,69,0,0.06);
+      border: 1px solid rgba(255,69,0,0.3);
+      border-left: 4px solid #ff4500;
+      border-radius: 10px;
+    }
 
-        /* Scrollbar */
-        ::-webkit-scrollbar { width: 8px; }
-        ::-webkit-scrollbar-track { background: #000; }
-        ::-webkit-scrollbar-thumb { background: var(--primary); border-radius: 4px; }
+    .protocol-highlight h3 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.5rem;
+      color: #ff4500;
+      letter-spacing: 2px;
+      margin-bottom: 12px;
+    }
 
-        /* Fontes */
-        body.lang-bn { font-family: 'Noto Sans Bengali', sans-serif !important; }
-        
-        h1 { font-family: 'Bebas Neue'; font-size: clamp(3.5rem, 10vw, 8rem); line-height: 0.9; background: linear-gradient(to bottom, #fff, #aaa); -webkit-background-clip: text; -webkit-text-fill-color: transparent; text-shadow: 0 10px 40px rgba(0,0,0,0.8); letter-spacing: 2px; }
-        h2 { font-family: 'Bebas Neue'; font-size: clamp(2rem, 6vw, 4rem); letter-spacing: 2px; text-transform: uppercase; color: #fff; margin-bottom: 30px; text-shadow: 0 0 30px rgba(0, 82, 255, 0.6); }
-        h3 { font-family: 'Bebas Neue'; font-size: 1.5rem; letter-spacing: 1px; color: #fff; margin: 0; }
-        p { font-size: 1.1rem; line-height: 1.6; color: #ccc; }
-    </style>
+    .protocol-highlight p { color: #ccc; font-size: 0.95rem; line-height: 1.75; }
 
-        <style>
-        
-        /* INTRO MATRIX */
-        #intro-overlay { position: fixed; inset: 0; background: #000; z-index: 100000; display: flex; flex-direction: column; align-items: center; justify-content: center; font-family: 'Courier Prime', monospace; transition: opacity 1.5s ease; }
-        #seq-console { width: 90%; max-width: 600px; color: var(--primary); text-align: left; font-size: 13px; margin-bottom: 20px; }
-        #seq-wakeup { display: none; flex-direction: column; align-items: center; text-align: center; width: 100%; }
-        .intro-video-circle { width: 240px; height: 240px; border-radius: 50%; border: 3px solid #333; overflow: hidden; margin-bottom: 30px; transition: 1.5s; filter: grayscale(100%) brightness(0.7); }
-        .intro-video-circle.active { filter: grayscale(0%) brightness(1); border-color: var(--primary); box-shadow: 0 0 80px var(--primary); }
-        .intro-video-circle video { width: 100%; height: 100%; object-fit: cover; }
-        .matrix-text { min-height: 30px; color: var(--matrix); font-size: 1.2rem; margin-bottom: 30px; text-shadow: 0 0 10px var(--matrix); letter-spacing: 2px; font-weight: bold; text-transform: uppercase; }
+    .security-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 14px;
+      margin-top: 16px;
+    }
 
-        /* UNISWAP POPUP */
-        .uni-popup {
-            position: fixed; bottom: 20px; right: 20px; z-index: 9999;
-            background: linear-gradient(135deg, #ff007a, #ff4500);
-            color: #fff; padding: 12px 25px; border-radius: 50px;
-            font-weight: 900; text-decoration: none; display: flex; align-items: center; gap: 10px;
-            box-shadow: 0 0 30px rgba(255, 0, 122, 0.6); border: 2px solid #fff;
-            animation: pulseUni 2s infinite; font-family: 'Bebas Neue'; font-size: 1.2rem;
-        }
-        @keyframes pulseUni { 0% { transform: scale(1); } 50% { transform: scale(1.05); } 100% { transform: scale(1); } }
-    </style>
+    .sec-tag {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 14px;
+      background: rgba(0,0,0,0.3);
+      border: 1px solid rgba(0,82,255,0.25);
+      border-radius: 8px;
+      font-size: 0.82rem;
+      color: #aac4ff;
+    }
 
-        <style>
-        /* CONTAINER */
-        .container { max-width: 1200px; margin: 0 auto; position: relative; z-index: 1; padding: 0 15px 80px; }
-        .glass-panel {
-            background: var(--glass); border: 1px solid var(--border); backdrop-filter: blur(20px);
-            border-radius: 24px; padding: 50px 30px; margin: 60px 0;
-            box-shadow: 0 30px 80px rgba(0,0,0,0.9); position: relative; overflow: hidden;
-        }
-        .glass-panel:hover { border-color: var(--primary); box-shadow: 0 0 40px rgba(0,82,255,0.2); }
-        .glass-panel::before { content:''; position: absolute; top:0; left:0; width: 4px; height: 100%; background: var(--primary); box-shadow: 0 0 20px var(--primary); }
+    .sec-tag::before { content: '🔒'; font-size: 0.9rem; }
 
-        /* GRID ACTS (RESPONSIVO) */
-        .acts-grid { display: grid; gap: 30px; grid-template-columns: 1fr; }
-        @media (min-width: 768px) { .acts-grid { grid-template-columns: repeat(2, 1fr); } }
-        @media (min-width: 1024px) { .acts-grid { grid-template-columns: repeat(3, 1fr); } }
-        
-        .act-card { background: rgba(0,0,0,0.5); border: 1px solid #333; padding: 20px; transition: 0.3s; display: flex; flex-direction: column; }
-        .act-card:hover { transform: translateY(-5px); border-color: var(--accent); }
-        .act-img { 
-            width: 100%; 
-            height: auto; 
-            aspect-ratio: 16/9; /* FORÇA PROPORÇÃO EM TODAS AS PLATAFORMAS */
-            object-fit: cover; 
-            margin-bottom: 15px; 
-            border-bottom: 2px solid var(--primary); 
-        }
+    /* === TOKENOMICS === */
+    .tokenomics-roadmap {
+      margin: 80px 0;
+      background: rgba(0,82,255,0.07);
+      border: 2px solid rgba(0,82,255,0.4);
+      border-radius: 18px;
+      padding: 60px 25px;
+      box-shadow: 0 0 60px rgba(0,82,255,0.12);
+      position: relative;
+      overflow: hidden;
+    }
 
-        /* GRID WEALTH (RESPONSIVO) */
-        .wealth-grid { display: grid; gap: 15px; grid-template-columns: 1fr; margin-top: 30px; }
-        @media (min-width: 1024px) { .wealth-grid { grid-template-columns: repeat(2, 1fr); } }
-        
-        .wealth-item { display: grid; grid-template-columns: 70px 1fr; align-items: center; padding: 15px; background: rgba(0,0,0,0.6); border: 1px solid #333; transition: 0.3s; }
-        .wealth-item:hover { border-color: var(--gold); transform: scale(1.01); }
-        .w-avatar { width: 60px; height: 60px; border-radius: 50%; object-fit: cover; border: 2px solid #555; }
+    .tokenomics-roadmap::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at 20% 15%, rgba(255,69,0,0.15), transparent 45%),
+        radial-gradient(circle at 80% 30%, rgba(0,82,255,0.18), transparent 50%),
+        repeating-linear-gradient(135deg, rgba(255,255,255,0.03) 0 2px, transparent 2px 10px);
+      opacity: 0.4;
+      pointer-events: none;
+    }
 
-        /* LIVE DATA & STATS */
-        .live-data-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; margin-top: 30px; }
-        .stats-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 30px; }
-        @media (min-width: 768px) { .stats-grid { grid-template-columns: repeat(3, 1fr); } }
-        
-        .stat-box { background: rgba(255,255,255,0.05); border: 1px solid #333; padding: 15px; border-radius: 10px; text-align: center; }
-        .stat-box .label { font-size: 0.7rem; color: #888; text-transform: uppercase; margin-bottom: 5px; }
-        .stat-box .value { font-family: 'Bebas Neue'; font-size: 1.5rem; color: #fff; }
-    </style>
-        <style>
-        /* ROLETA */
-        .roulette-section { text-align: center; padding: 60px 15px; margin: 60px 0; background: radial-gradient(circle at center, #0a1525 0%, #000 100%); border: 2px solid var(--border); border-radius: 30px; position: relative; overflow: hidden; box-shadow: 0 0 100px rgba(0,82,255,0.15); }
-        .nft-card-frame { width: 100%; max-width: 320px; aspect-ratio: 3/4.5; background: #000; border: 4px solid #333; border-radius: 20px; margin: 30px auto; position: relative; overflow: hidden; box-shadow: 0 0 80px #000; transition: 0.2s; }
-        .nft-card-frame.shaking { animation: shake 0.1s infinite; border-color: var(--accent); }
-        .nft-card-frame.god { border-color: var(--gold) !important; box-shadow: 0 0 150px var(--gold) !important; }
-        .mystery-cover { position: absolute; inset: 0; z-index: 10; background: repeating-linear-gradient(45deg, #000, #000 10px, #111 10px, #111 20px); display: flex; align-items: center; justify-content: center; transition: 0.3s; }
-        
-        .roulette-overlay { position: fixed; inset: 0; z-index: 99999; display: none; align-items: center; justify-content: center; background: rgba(0,0,0,0.95); backdrop-filter: blur(10px); padding: 20px; }
-        .overlay-inner { text-align: center; padding: 30px; border: 2px solid var(--gold); border-radius: 20px; background: radial-gradient(circle, rgba(255,215,0,0.1), #000); box-shadow: 0 0 100px rgba(255,215,0,0.3); width: 100%; max-width: 500px; }
+    .tr-inner { position: relative; max-width: 1100px; margin: 0 auto; }
 
-        /* BOTÕES COOL */
-        .electric-btn { background: #000; color: #fff; font-family: 'Bebas Neue'; font-size: 1.4rem; padding: 15px 30px; border: 2px solid var(--accent); cursor: pointer; text-decoration: none; display: inline-flex; align-items: center; justify-content: center; gap: 10px; transition: 0.3s; box-shadow: 0 0 20px rgba(255,69,0,0.3); text-transform: uppercase; width: auto; }
-        .electric-btn:hover { background: var(--accent); box-shadow: 0 0 60px var(--accent); color: #000; transform: scale(1.02); }
-        
-        .radiant-btn { background: linear-gradient(90deg, #0052ff, #00c6ff); color: #fff; padding: 20px 50px; border-radius: 5px; text-decoration: none; font-family: 'Bebas Neue'; font-size: 1.8rem; display: inline-block; margin-top: 30px; border: 2px solid #fff; box-shadow: 0 0 40px var(--primary); animation: glowBtn 3s infinite; }
+    .tr-header { text-align: center; margin-bottom: 50px; }
 
-        /* WAKE UP BUTTON */
-        .wake-btn { background: transparent; border: 2px solid var(--matrix); color: var(--matrix); padding: 15px 40px; font-family: 'Courier Prime'; font-size: 1.2rem; cursor: pointer; text-transform: uppercase; letter-spacing: 3px; transition: 0.3s; box-shadow: 0 0 15px var(--matrix); font-weight: bold; position: relative; overflow: hidden; }
-        .wake-btn:hover { background: var(--matrix); color: #000; box-shadow: 0 0 50px var(--matrix); }
-        .wake-btn.activated { background: #000; border-color: #fff; color: #fff; box-shadow: none; pointer-events: none; }
+    .tr-kicker {
+      display: inline-block;
+      font-size: 0.8rem;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: #aaa;
+      border: 1px solid rgba(255,255,255,0.15);
+      padding: 7px 14px;
+      border-radius: 999px;
+      background: rgba(0,0,0,0.25);
+    }
 
-        /* FX */
-        .scan-lines { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: repeating-linear-gradient(0deg, rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.15) 1px, transparent 1px, transparent 2px); pointer-events: none; z-index: 9990; opacity: 0.3; }
-        .sparks { position: absolute; inset: 0; pointer-events: none; overflow: hidden; }
-        .spark { position: absolute; width: 4px; height: 4px; background: var(--gold); border-radius: 50%; animation: sparkFly 1s ease-out forwards; }
+    .tr-title {
+      font-family: "Bebas Neue", sans-serif;
+      font-size: clamp(2.2rem, 6vw, 3.2rem);
+      color: #ff4500;
+      margin: 18px 0 12px;
+      letter-spacing: 4px;
+      text-shadow: 0 0 20px rgba(255,69,0,0.3);
+    }
 
-        @keyframes godPulse { 0% { box-shadow: 0 0 50px var(--gold); } 50% { box-shadow: 0 0 150px var(--gold); } 100% { box-shadow: 0 0 50px var(--gold); } }
-        @keyframes shake { 0% { transform: translate(2px, 2px); } 50% { transform: translate(-2px, -2px); } 100% { transform: translate(2px, -2px); } }
-        @keyframes glowBtn { 0% { box-shadow: 0 0 20px var(--primary); } 50% { box-shadow: 0 0 60px var(--primary); border-color: var(--accent); } 100% { box-shadow: 0 0 20px var(--primary); } }
-        @keyframes pulseUni { 0% { transform: scale(1); } 50% { transform: scale(1.05); } 100% { transform: scale(1); } }
-        @keyframes slideDown { from { opacity: 0; transform: translateY(-20px); } to { opacity: 1; transform: translateY(0); } }
-        @keyframes sparkFly { 0% { opacity: 1; transform: scale(1); } 100% { opacity: 0; transform: translate(var(--x), var(--y)); } }
-    </style>
-    
-    <style>/* GOOGLE TRANSLATE – INLINE INTEGRATED */
-.translate-inline {
-    margin: 25px auto 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-    font-family: 'Courier Prime';
-    font-size: 0.9rem;
-    color: #aaa;
-}
+    .tr-subtitle { color: #ddd; max-width: 760px; margin: 0 auto; font-size: 1.05rem; line-height: 1.7; }
+    .accent  { color: #ff4500; font-weight: 900; }
+    .accent2 { color: #ffb700; font-weight: 900; }
 
-.translate-inline select {
-    background: #000;
-    color: #00eaff;
-    border: 1px solid #0052ff;
-    border-radius: 6px;
-    padding: 6px 10px;
-    font-family: 'Courier Prime';
-    cursor: pointer;
-}
+    .tr-block { margin-top: 45px; }
+    .tr-block-title { margin-bottom: 20px; }
+    .tr-block-title h3 {
+      font-family: "Bebas Neue", sans-serif;
+      font-size: 2rem;
+      margin: 10px 0 0;
+      letter-spacing: 2px;
+      color: #fff;
+    }
 
-/* remove branding visual excessivo */
-.goog-logo-link {
-    display: none !important;
-}
+    .tag {
+      display: inline-block;
+      font-size: 0.78rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #0052ff;
+      font-weight: 800;
+      background: rgba(0,0,0,0.25);
+      border: 1px solid rgba(0,82,255,0.55);
+      padding: 6px 10px;
+      border-radius: 10px;
+    }
 
-.goog-te-gadget {
-    color: #666 !important;
-    font-size: 0 !important;
-}
+    .tok-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 18px;
+      margin-top: 20px;
+    }
 
-body {
-    top: 0 !important;
-}
-    </style>
-    
+    .tok-card {
+      background: rgba(0,0,0,0.28);
+      border: 2px solid rgba(0,82,255,0.5);
+      border-radius: 14px;
+      padding: 22px;
+      transition: all .25s;
+    }
+
+    .tok-card:hover { transform: translateY(-6px); border-color: #ff4500; box-shadow: 0 0 40px rgba(255,69,0,0.2); }
+    .tok-top { display: flex; gap: 14px; align-items: baseline; justify-content: space-between; }
+    .tok-pct { font-family: "Bebas Neue", sans-serif; font-size: 3rem; color: #fff; letter-spacing: 2px; }
+    .tok-name { font-weight: 900; color: #ff4500; text-transform: uppercase; letter-spacing: 1px; font-size: .9rem; text-align: right; }
+
+    .tok-bar {
+      height: 10px;
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(255,69,0,0.4);
+      border-radius: 999px;
+      overflow: hidden;
+      margin: 14px 0 12px;
+    }
+
+    .tok-bar-fill {
+      height: 100%;
+      background: linear-gradient(90deg, #ff4500, #ffb700, #0052ff);
+      box-shadow: 0 0 14px rgba(255,69,0,0.3);
+    }
+
+    .tok-desc { color: #ddd; line-height: 1.6; margin: 0 0 10px; font-size: .95rem; }
+    .tok-foot { color: #aaa; font-size: .82rem; }
+    .ok   { color: #00ff00; font-weight: 900; }
+    .warn { color: #ffb700; font-weight: 900; }
+
+    .tok-supply {
+      margin-top: 22px;
+      padding: 20px;
+      border-radius: 14px;
+      border: 2px dashed rgba(255,69,0,0.6);
+      background: rgba(255,69,0,0.07);
+      text-align: center;
+    }
+
+    .tok-supply-label { color: #aaa; text-transform: uppercase; letter-spacing: 2px; font-size: .78rem; }
+    .tok-supply-value { font-family: "Bebas Neue", sans-serif; font-size: 2.2rem; color: #fff; margin-top: 6px; letter-spacing: 2px; }
+    .tok-supply-note  { color: #ddd; margin-top: 6px; font-size: .92rem; }
+
+    /* Vesting timeline */
+    .vesting-timeline {
+      margin-top: 20px;
+      background: rgba(0,0,0,0.3);
+      border: 1px solid rgba(255,183,0,0.3);
+      border-radius: 12px;
+      padding: 20px;
+    }
+
+    .vesting-timeline h4 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.2rem;
+      color: #ffb700;
+      letter-spacing: 2px;
+      margin-bottom: 14px;
+    }
+
+    .vesting-bar-wrap { position: relative; height: 10px; background: rgba(255,255,255,0.06); border-radius: 999px; margin: 8px 0 4px; overflow: hidden; }
+    .vesting-bar-fill { height: 100%; background: linear-gradient(90deg, #ffb700, #ff4500); border-radius: 999px; animation: vestPulse 3s ease-in-out infinite; }
+    @keyframes vestPulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.6; } }
+
+    .vesting-steps {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+      gap: 6px;
+      margin-top: 14px;
+    }
+
+    .vest-step {
+      text-align: center;
+      padding: 8px 4px;
+      background: rgba(255,183,0,0.06);
+      border: 1px solid rgba(255,183,0,0.2);
+      border-radius: 6px;
+      font-size: 0.7rem;
+      color: #aaa;
+    }
+
+    .vest-step .v-month { display: block; color: #ffb700; font-weight: 700; margin-bottom: 2px; }
+
+    /* === ROADMAP === */
+    .roadmap { margin-top: 22px; display: flex; flex-direction: column; gap: 14px; }
+
+    .rm-item {
+      display: flex;
+      gap: 16px;
+      background: rgba(0,0,0,0.22);
+      border: 2px solid rgba(0,82,255,0.4);
+      border-radius: 14px;
+      padding: 20px;
+      transition: all .25s;
+    }
+
+    .rm-item:hover { border-color: #ff4500; box-shadow: 0 0 30px rgba(255,69,0,0.15); transform: translateX(6px); }
+    .rm-num  { font-family: "Bebas Neue", sans-serif; font-size: 2.4rem; color: #0052ff; min-width: 46px; text-shadow: 0 0 14px rgba(0,82,255,0.35); }
+    .rm-date { color: #ff4500; font-weight: 900; letter-spacing: 1px; text-transform: uppercase; font-size: .9rem; }
+    .rm-title { font-family: "Bebas Neue", sans-serif; font-size: 1.6rem; letter-spacing: 2px; color: #fff; margin-top: 6px; }
+    .rm-list  { margin: 10px 0 0; padding-left: 18px; color: #ddd; line-height: 1.7; }
+    .rm-quote { color: #ffb700; font-style: italic; margin: 10px 0 12px; }
+    .rm-box   { border-left: 4px solid #ff4500; background: rgba(255,69,0,0.08); padding: 12px 14px; border-radius: 10px; color: #ddd; line-height: 1.7; }
+    .rm-highlight { border-color: #ff4500 !important; background: rgba(255,69,0,0.08) !important; }
+    .rm-faded { opacity: .65; }
+    .rm-mini  { color: #aaa; margin-top: 10px; }
+    .rm-footer { margin-top: 18px; color: #aaa; text-align: center; font-size: .92rem; line-height: 1.6; }
+
+    /* === STAKING VAULT === */
+    .staking-hazard-zone {
+      margin: 60px 0;
+      position: relative;
+      background: #050505;
+      border: 2px solid rgba(255,183,0,0.5);
+      border-radius: 12px;
+      overflow: hidden;
+      text-align: center;
+      padding: 40px 20px;
+      box-shadow: 0 0 30px rgba(255,183,0,0.1);
+    }
+
+    .hazard-stripes {
+      position: absolute;
+      top: 0; left: 0; right: 0; height: 12px;
+      background: repeating-linear-gradient(45deg, #ffb700, #ffb700 10px, #000 10px, #000 20px);
+      opacity: 0.7;
+    }
+
+    .h-icon { color: #ffb700; font-family: 'JetBrains Mono', monospace; letter-spacing: 2px; font-size: 0.88rem; margin-bottom: 15px; animation: blink 2s infinite; }
+    .h-title { font-family: "Bebas Neue", sans-serif; font-size: clamp(2.5rem, 5vw, 4rem); color: #fff; margin: 0; line-height: 1; }
+    .h-date  { display: block; font-size: 0.5em; color: #ff4500; margin-top: 5px; }
+    .h-desc  { color: #aaa; max-width: 600px; margin: 20px auto; font-size: 1.05rem; line-height: 1.7; }
+    .h-highlight { color: #fff; font-weight: bold; }
+    .h-footer { margin-top: 20px; font-size: 0.75rem; color: #555; letter-spacing: 1px; text-transform: uppercase; }
+
+    .h-btn {
+      background: transparent;
+      border: 1px solid #ff4500;
+      color: #ff4500;
+      padding: 14px 30px;
+      font-family: "Bebas Neue", sans-serif;
+      font-size: 1.5rem;
+      letter-spacing: 2px;
+      cursor: not-allowed;
+      position: relative;
+      overflow: hidden;
+      margin-top: 10px;
+      transition: all 0.2s;
+    }
+
+    .h-btn .btn-overlay {
+      position: absolute;
+      inset: 0;
+      background: #ff4500;
+      color: #000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      transform: translateY(100%);
+      transition: transform 0.2s ease;
+    }
+
+    .h-btn:hover .btn-overlay { transform: translateY(0); }
+    .h-btn:hover { box-shadow: 0 0 20px rgba(255,69,0,0.5); }
+
+    .glitch-text { position: relative; }
+    .glitch-text::before, .glitch-text::after {
+      content: attr(data-text);
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: #050505;
+    }
+    .glitch-text::before { left: 2px; text-shadow: -1px 0 #ff00c1; animation: glitchA 5s infinite linear alternate-reverse; }
+    .glitch-text::after  { left: -2px; text-shadow: -1px 0 #00fff9; animation: glitchB 5s infinite linear alternate-reverse; }
+    @keyframes glitchA { 0% { clip: rect(12px,9999px,82px,0); } 100% { clip: rect(62px,9999px,2px,0); } }
+    @keyframes glitchB { 0% { clip: rect(2px,9999px,42px,0); }  100% { clip: rect(12px,9999px,52px,0); } }
+
+    @keyframes scan { 0% { transform: translateY(-100%); } 100% { transform: translateY(500%); } }
+    .animate-scan { animation: scan 3s linear infinite; }
+
+    /* === DISCLAIMER === */
+    .disclaimer {
+      margin: 60px 0;
+      padding: 40px;
+      background: rgba(255,69,0,0.06);
+      border: 1px solid rgba(255,69,0,0.3);
+      border-radius: 12px;
+    }
+
+    .disclaimer h3 {
+      font-family: 'Bebas Neue', sans-serif;
+      color: #ff4500;
+      font-size: 1.6rem;
+      letter-spacing: 2px;
+      margin-bottom: 20px;
+    }
+
+    .disclaimer p {
+      color: #aaa;
+      font-size: 0.92rem;
+      line-height: 1.75;
+      margin-bottom: 14px;
+    }
+
+    .disclaimer strong { color: #fff; }
+
+    /* === TRANSLATE === */
+    .translate-section {
+      padding: 40px 20px;
+      margin: 60px auto;
+      background: rgba(0,82,255,0.07);
+      border-radius: 14px;
+      max-width: 800px;
+      border: 1px solid rgba(0,82,255,0.2);
+      text-align: center;
+    }
+
+    body { top: 0px !important; position: static !important; }
+    .goog-te-banner-frame { display: none !important; visibility: hidden !important; height: 0 !important; }
+    .goog-te-gadget-simple {
+      background-color: #050505 !important;
+      border: 1px solid #ff4500 !important;
+      padding: 12px 25px !important;
+      border-radius: 50px !important;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+    .goog-te-gadget-simple:hover { background-color: #ff4500 !important; box-shadow: 0 0 20px rgba(255,69,0,0.5); }
+    .goog-te-gadget-icon { display: none !important; }
+    .goog-te-menu-value span:nth-child(1) { color: #fff !important; font-weight: bold; }
+    .goog-te-menu-value span:nth-child(3), .goog-te-menu-value span:nth-child(5) { display: none !important; }
+
+    /* === FOOTER === */
+    footer {
+      text-align: center;
+      padding: 50px 20px 40px;
+      border-top: 2px solid rgba(0,82,255,0.25);
+      margin-top: 60px;
+    }
+
+    footer p { color: #666; margin: 6px 0; font-size: 0.88rem; line-height: 1.7; }
+    footer p:first-child { color: #ff4500; font-weight: 900; font-size: 1rem; }
+
+    /* === MISC SHARED === */
+    @keyframes shimmer { 0% { transform: translateX(-100%); } 100% { transform: translateX(400%); } }
+
+    /* Scan animation */
+    @keyframes scan { 0% { transform: translateY(-100%); } 100% { transform: translateY(500%); } }
+
+    /* pulse-text already defined */
+
+    @media (max-width: 768px) {
+      .buttons-grid { grid-template-columns: 1fr; }
+      .btn { font-size: 0.85rem; padding: 12px 22px; }
+      .px-stats { grid-template-columns: 1fr 1fr; }
+      .protocol-grid { grid-template-columns: 1fr; }
+      .intro-section { padding: 30px 20px; }
+      #launch-app-btn { padding: 8px 14px; font-size: 0.75rem; }
+      .contract-address { font-size: 0.7rem; }
+    }
+  </style>
 </head>
-<body class="loading">
+<body class="noscroll">
 
-        <div class="scan-lines"></div>
-    <div id="subliminal-layer" style="position:fixed; inset:0; pointer-events:none; z-index:9999;"></div>
+  <!-- STICKY LAUNCH APP BUTTON -->
+  <a id="launch-app-btn" href="#" target="_blank">Launch App</a>
 
-    <div id="intro-overlay">
-        <div id="seq-console"></div>
-        <div id="seq-wakeup">
-            <div class="intro-video-circle" id="intro-logo">
-                <video autoplay muted loop playsinline><source src="grok_video_2025-12-22-16-28-28.mp4" type="video/mp4"></video>
-            </div>
-            <div class="matrix-text" id="intro-text">CONSCIOUSNESS DETECTED</div>
-            <button class="wake-btn" id="intro-btn" onclick="runMatrixSequence()">DO YOU WANT TO WAKE UP?</button>
+  <!-- ============ BOOT SEQUENCE ============ -->
+  <div id="sys-overlay-root" class="sys-container">
+    <div id="buffer-x99" class="ghost-render">INITIALIZING...</div>
+    <div class="scan-layer"></div>
+    <div class="static-layer"></div>
+
+    <div id="seq-init" class="render-stage active">
+      <div class="console-log">
+        <div class="log-output">
+          <p>> KERNEL: BLAZEPHOENIX_PROTOCOL_v2.0</p>
+          <p>> NETWORK: BASE_CHAIN_L2</p>
+          <p>> CONTRACT: 0x57b2f1de1e5ffef837aa61cbce0cf304077ed661</p>
+          <p class="blink">> SYNCHRONIZING NODES...</p>
+          <p style="color:#ff3333;">> LEGACY_SYSTEM_FAULT: FIAT_GATEWAY_OFFLINE</p>
+          <br>
+          <p>> EXECUTING PROTOCOL_BOOT.EXE...</p>
         </div>
+        <div class="load-wrapper">
+          <div class="load-bar"></div>
+          <span id="load-val">0%</span>
+        </div>
+        <h1 class="boot-header">BLAZE PHOENIX</h1>
+      </div>
     </div>
 
-    
-
-    <div class="container" id="main-content">
-        
-        <header style="padding: 100px 20px; text-align: center;">
-            <div class="logo-circle" style="width:260px; height:260px; margin:0 auto 30px; border-radius:50%; border:4px solid var(--primary); overflow:hidden; box-shadow:0 0 100px var(--primary);">
-                <video autoplay muted loop playsinline style="width:100%; height:100%; object-fit:cover;">
-                    <source src="grok_video_2025-12-22-16-28-28.mp4" type="video/mp4">
-                </video>
-                </div>
-            <h1>BLAZE PHOENIX</h1>
-            <p class="subtitle" style="font-family:'Courier Prime'; color:var(--accent); letter-spacing:5px; margin-top:20px; font-weight:900; font-size: 1.4rem;">THE GREAT RESET IS HERE</p>
-            
-            <a href="#phoenix-protocol" class="radiant-btn">ENTER PHOENIX PROTOCOL</a>
-        </header>
-
-        <section class="glass-panel" style="margin-top:0;">
-            <h2 style="text-align: center; margin-bottom: 30px;">SYSTEM TELEMETRY</h2>
-            
-            <div class="stats-grid">
-                <div class="stat-box"><div class="label">Total Supply</div><div class="value">100B</div></div>
-                <div class="stat-box"><div class="label">Market Liquidity</div><div class="value" style="color:var(--primary);">73%</div></div>
-                <div class="stat-box"><div class="label">Holders</div><div class="value" style="color:#fff;">105</div></div>
-                <div class="stat-box"><div class="label">Tokens Locked</div><div class="value" style="color:var(--gold);">17.5B</div></div>
-                <div class="stat-box"><div class="label">Network</div><div class="value" style="color:var(--accent);">BASE L2</div></div>
-                <div class="stat-box"><div class="label">Tax</div><div class="value">0%</div></div>
-            </div>
-        </section>
-        
-        <div class="translate-inline">
-    🌐 <span>Select language:</span>
-    <div id="google_translate_element"></div>
-</div>
-
-        <section class="glass-panel">
-            <h2 style="text-align:center; color:#fff;">THE 1988 PROPHECY</h2>
-            <div style="text-align:justify; font-size:1.1rem; line-height:1.8; color:#ccc; max-width:900px; margin:0 auto;">
-                <p>In 1988, <strong>The Economist</strong> predicted a global currency rising from burning fiat. They told us the fire was coming. The centralized mirage promised a "Great Reset", but offered a digital prison (CBDCs). But they made a fatal mistake: they assumed <em>they</em> would be the ones to light the match. <strong style="color:var(--primary)">BLAZE PHOENIX ($BLAZEP)</strong> is the unauthorized execution. We hijacked the narrative. We returned it to the decentralized community.</p>
-                <div style="margin-top:30px; padding:20px; background:rgba(0,0,0,0.6); border-left:4px solid var(--accent); text-align:center; font-family:'Courier Prime'; color:var(--accent);">
-                    <span style="color:#fff; font-weight:bold;">THE RED PILL OR THE BLUE FROG?</span><br>
-                    >> SYSTEM_STATUS: <span style="color:var(--primary); font-weight:bold;">NARRATIVE_OVERRIDE_COMPLETE</span>
-                </div>
-            </div>
-        </section>
-
-                <section class="glass-panel">
-            <h2 style="text-align: center; margin-bottom: 30px;">COUNTDOWN TO THE RESET</h2>
-            
-            <div class="live-data-grid">
-                <div class="live-data-card" style="background:rgba(255,255,255,0.03); padding:20px; border-radius:12px; text-align:center; border:1px solid var(--border);">
-                    <div style="font-size:0.8rem; color:#888;">CURRENT PRICE</div>
-                    <div id="price" style="font-family:'Bebas Neue'; font-size:2.5rem; color:#00ff41;">$0.000000142</div>
-                </div>
-                <div class="live-data-card" style="background:rgba(255,255,255,0.03); padding:20px; border-radius:12px; text-align:center; border:1px solid var(--border);">
-                    <div style="font-size:0.8rem; color:#888;">24H CHANGE</div>
-                    <div id="change" style="font-family:'Bebas Neue'; font-size:2.5rem; color:var(--accent);">+12.5%</div>
-                </div>
-                <div class="live-data-card" style="background:rgba(255,255,255,0.03); padding:20px; border-radius:12px; text-align:center; border:1px solid var(--border);">
-                    <div style="font-size:0.8rem; color:#888;">MARKET CAP</div>
-                    <div id="mcap" style="font-family:'Bebas Neue'; font-size:2.5rem; color:#fff;">$142.5K</div>
-                </div>
-            </div>
-
-            <div style="margin-top:50px; text-align:center;">
-                <h3 style="color: var(--accent); font-family:'Bebas Neue'; font-size:1.8rem; margin-bottom:10px;">PROGRESS TO $1</h3>
-                <div style="width:100%; height:30px; background:#000; border:1px solid var(--accent); border-radius:50px; overflow:hidden; margin:15px 0;">
-                    <div id="progress-bar" style="width:0.012%; height:100%; background:linear-gradient(90deg, var(--accent), var(--gold)); box-shadow:0 0 20px var(--accent);"></div>
-                </div>
-                <div style="display:flex; justify-content:space-between; font-family:'Courier Prime'; color:#aaa; font-weight:bold;">
-                    <span>$0</span><span>$1 TARGET</span>
-                </div>
-                <p style="color:var(--gold); font-weight:900; margin-top:20px;">ESTIMATED RESET: Q4 2025</p>
-            </div>
-        </section>
-
-                <section class="glass-panel">
-            <h2 style="text-align:center; margin-bottom:50px;">THE LEGEND: FROG TO PHOENIX</h2>
-            <div class="acts-grid">
-                <div class="act-card">
-                    <img src="ima1.jpg" onerror="this.src='https://placehold.co/600x400/111/FFF?text=Act+I'" class="act-img" alt="Act I">
-                    <h3 style="color:var(--primary);">ACT I: THE SLEEPING FROG</h3>
-                    <p style="color:#aaa; font-size:0.9rem;">1988-2024. Just a meme living in the swamp of high gas fees. The elites laughed. They didn't know he was gathering mana to roast marshmallows on the Central Bank.</p>
-                </div>
-                <div class="act-card">
-                    <img src="ima2.jpg" onerror="this.src='https://placehold.co/600x400/111/FFF?text=Act+II'" class="act-img" alt="Act II">
-                    <h3 style="color:var(--accent);">ACT II: THE MUTATION</h3>
-                    <p style="color:#aaa; font-size:0.9rem;">2025. The frog touched Base L2 radiation. Green skin boiled and turned Electric Blue. Wings sprouted. "Feels good man" became "FEELS POWERFUL MAN."</p>
-                </div>
-                <div class="act-card">
-                    <img src="ima3.jpg" onerror="this.src='https://placehold.co/600x400/111/FFF?text=Act+III'" class="act-img" alt="Act III">
-                    <h3 style="color:var(--gold);">ACT III: THE ASCENSION</h3>
-                    <p style="color:#aaa; font-size:0.9rem;">Present Day. We hijacked the Reset. The Phoenix burns the zeros. The joke is now the financial standard. Irony became reality.</p>
-                </div>
-                <div class="act-card">
-                    <img src="ima4.jpg" onerror="this.src='https://placehold.co/600x400/111/FFF?text=Act+IV'" class="act-img" alt="Act IV">
-                    <h3 style="color:#fff;">ACT IV: THE WILDFIRE</h3>
-                    <p style="color:#aaa; font-size:0.9rem;">Next 6 Months. The narrative spreads like contagion. "Normies" realize their money is burning. Central banks panic. The Great Reset becomes the Great Meme.</p>
-                </div>
-                <div class="act-card">
-                    <img src="ima5.jpg" onerror="this.src='https://placehold.co/600x400/111/FFF?text=Act+V'" class="act-img" alt="Act V">
-                    <h3 style="color:var(--matrix);">ACT V: THE INFINITY</h3>
-                    <p style="color:#aaa; font-size:0.9rem;">Year 2+. No End Game. Only the New Normal. The Phoenix sits on the throne of the old world's ashes. Memes became money.</p>
-                </div>
-            </div>
-        </section>
-
-                <section class="roulette-section" id="great-reset-game">
-            <div style="color:var(--primary); font-weight:900; letter-spacing:3px; margin-bottom:10px;">INTERACTIVE SIMULATION</div>
-            <h2 style="color:#fff; margin-bottom:10px;">WHO WILL YOU BE?</h2>
-            <p style="color:#aaa; max-width:600px; margin:0 auto 30px;">
-                The fire consumes all. ⚠️ RARE EVENT: SATOSHI CARD (1/50,000).
-            </p>
-
-            <div class="game-container">
-                <div class="nft-card-frame" id="nft-card">
-                    <div style="height:65%; background:#111; overflow:hidden; display:flex; align-items:center; justify-content:center;">
-                        <img src="https://blazephoenix.xyz/og-image.jpg" id="nft-img" style="width:100%; height:100%; object-fit:cover;">
-                        <div class="mystery-cover" id="mystery-cover"><span style="font-size:80px; font-family:'Bebas Neue'; color:#333;">?</span></div>
-                    </div>
-                    <div style="height:35%; padding:15px; border-top:2px solid #333; background:#050505; display:flex; flex-direction:column; justify-content:center;">
-                        <h3 id="nft-name" style="color:#fff; margin-bottom:5px;">SYSTEM READY</h3>
-                        <p id="nft-desc" style="color:#888; font-size:0.9rem;">Waiting for input...</p>
-                    </div>
-                </div>
-
-                <div style="margin-top:30px;">
-                    <button class="electric-btn" id="reset-btn" onclick="spinRoulette()">TRIGGER THE RESET</button>
-                </div>
-                
-                <div id="share-controls" style="display:none; margin-top:30px; gap:15px; justify-content:center; flex-wrap:wrap;">
-                    <a href="#" id="btn-share-base" target="_blank" style="background:#0052ff; color:#fff; padding:12px 25px; border-radius:50px; text-decoration:none; font-weight:bold;">SHARE ON BASE 🔵</a>
-                    <a href="#" id="btn-share-x" target="_blank" style="background:#000; border:1px solid #333; color:#fff; padding:12px 25px; border-radius:50px; text-decoration:none; font-weight:bold;">POST ON 𝕏</a>
-                </div>
-            </div>
-
-            <div id="roulette-overlay" style="position:fixed; inset:0; z-index:99999; display:none; align-items:center; justify-content:center; background:rgba(0,0,0,0.95);">
-                <div class="overlay-inner">
-                    <div class="sparks" id="sparks-container"></div>
-                    <h2 style="color:var(--gold); font-size:3rem;">CONGRATULATIONS</h2>
-                    <p style="color:#fff;">YOU BROKE THE SIMULATION.</p>
-                    <div style="margin:20px 0; background:rgba(255,215,0,0.1); border:1px solid var(--gold); padding:15px;">
-                        <div style="color:var(--gold); font-size:0.8rem; letter-spacing:2px;">SECURE CLAIM CODE</div>
-                        <div id="claim-code" style="color:#fff; font-family:monospace; font-size:1.5rem; margin-top:5px;">GENESIS-X</div>
-                    </div>
-                    <button class="electric-btn" onclick="document.getElementById('roulette-overlay').style.display='none'">CLOSE</button>
-                </div>
-            </div>
-        </section>
-
-                <section class="glass-panel" style="border-color:var(--gold);">
-            <h2 style="text-align:center; color:var(--gold);">ELITES PROFITING FROM RESET</h2>
-            <p style="text-align:center; color:#888; margin-bottom:40px;">Hover over the elite to reveal their simulation status.</p>
-            <div id="wealth-list" class="wealth-grid">
-                </div>
-            <div style="margin-top:40px; background:#000; padding:15px; border:1px solid #0052ff;">
-                <h3 style="color:#fff; font-size:1rem; margin:0;">LIVE WEALTH TRANSFER <span style="color:red; animation:blink 1s infinite;">●</span></h3>
-                <div id="tx-feed" style="font-family:'Courier Prime'; color:#0052ff; font-size:0.8rem; height:150px; overflow:hidden; margin-top:10px;"></div>
-            </div>
-        </section>
-
-        <section class="glass-panel" id="phoenix-protocol" style="border-color: #ff4500; text-align: center;">
-            <i class="fa-solid fa-microchip" style="font-size:4rem; color:#ff4500; margin-bottom:20px;"></i>
-            <h2 style="font-size:3.5rem;">PHOENIX PROTOCOL</h2>
-            <p style="color:#aaa; max-width:800px; margin:0 auto 30px; font-size:1.2rem;">The Machine of Trust. Hard-coded into Base L2.</p>
-            <div style="display:flex; justify-content:center; gap:20px; flex-wrap:wrap;">
-                <div style="background:#000; padding:20px; border:1px solid #333; width:200px;"><h3 style="color:#0052ff;">MOTOR</h3><p style="font-size:0.8rem;">Smart Distribution</p></div>
-                <div style="background:#000; padding:20px; border:1px solid #ff4500;"><h3 style="color:#ff4500;">FORTRESS</h3><p style="font-size:0.8rem;">Profits Protected</p></div>
-                <div style="background:#000; padding:20px; border:1px solid #ffb700;"><h3 style="color:#ffb700;">RADAR</h3><p style="font-size:0.8rem;">Real-Time Audit</p></div>
-            </div>
-        </section>
-
-                <section class="glass-panel">
-            <h2 style="text-align: center;">TOKENOMICS</h2>
-            <div style="max-width: 800px; margin: 0 auto;">
-                <div class="tok-card"><div style="display:flex; justify-content:space-between; margin-bottom:5px;"><span>73% LIQUIDITY (LOCKED)</span> <span style="color:#0052ff;">🔥</span></div><div style="background:#222; height:12px; border-radius:10px;"><div style="width:73%; height:100%; background:#0052ff; border-radius:10px;"></div></div></div>
-                <div class="tok-card"><div style="display:flex; justify-content:space-between; margin-bottom:5px;"><span>15% TEAM (VESTED)</span> <span style="color:#ff4500;">🔒</span></div><div style="background:#222; height:12px; border-radius:10px;"><div style="width:15%; height:100%; background:#ff4500; border-radius:10px;"></div></div></div>
-                <div class="tok-card"><div style="display:flex; justify-content:space-between; margin-bottom:5px;"><span>5% PARTNERS</span> <span style="color:#ffb700;">📢</span></div><div style="background:#222; height:12px; border-radius:10px;"><div style="width:5%; height:100%; background:#ffb700; border-radius:10px;"></div></div></div>
-                <div style="display:grid; grid-template-columns: repeat(3, 1fr); gap:10px; margin-top:20px; text-align:center;">
-                    <div style="background:#111; padding:15px; border-radius:10px; border:1px solid #00ff41; color:#00ff41;">2.5% AIRDROPS</div>
-                    <div style="background:#111; padding:15px; border-radius:10px; border:1px solid #0052ff; color:#0052ff;">2.5% PROTOCOL</div>
-                    <div style="background:#111; padding:15px; border-radius:10px; border:1px solid #9900ff; color:#9900ff;">2.5% STAKING</div>
-                </div>
-            </div>
-        </section>
-
-        <section class="contract-section" style="background:rgba(0,255,65,0.05); border:2px solid #00ff41; border-radius:20px; padding:40px; text-align:center; margin:60px 0;">
-            <div style="font-family:'Bebas Neue'; font-size:2.5rem; color:#00ff41; margin-bottom:10px;">✅ SMART CONTRACT ADDRESS</div>
-            <div id="safe-contract" style="font-family:'Courier Prime'; font-size:1.1rem; background:#000; padding:20px; border-radius:10px; border:1px dashed #00ff41; color:#fff; word-break:break-all; cursor:pointer;" onclick="navigator.clipboard.writeText('0xB73a62a437be5B091c724B54D6c4d06bBe71d128'); alert('COPIED!');">
-                0xB73a62a437be5B091c724B54D6c4d06bBe71d128
-            </div>
-            
-            <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:15px; margin-top:30px;">
-                <a href="https://basescan.org/token/0xB73a62a437be5B091c724B54D6c4d06bBe71d128" target="_blank" class="electric-btn" style="font-size:1rem; padding:12px 20px;">BASESCAN</a>
-                <a href="https://www.dextools.io/app/base/pair-explorer/0x5f9bc0b8ea184b001fbd771a1ac8d3e745d43443007477c94a5a87e6188f576a" target="_blank" class="electric-btn" style="font-size:1rem; padding:12px 20px;">DEXTOOLS</a>
-                <a href="https://dexscreener.com/base/0x5f9bc0b8ea184b001fbd771a1ac8d3e745d43443007477c94a5a87e6188f576a" target="_blank" class="electric-btn" style="font-size:1rem; padding:12px 20px;">DEXSCREENER</a>
-                <a href="https://www.geckoterminal.com/base/pools/0x5f9bc0b8ea184b001fbd771a1ac8d3e745d43443007477c94a5a87e6188f576a" target="_blank" class="electric-btn" style="font-size:1rem; padding:12px 20px;">GECKOTERMINAL</a>
-            </div>
-        </section>
-
-        <section class="glass-panel">
-            <h2 style="text-align: center;">ROADMAP: THE RISE</h2>
-            <div style="display:grid; gap:20px;">
-                <div style="border-left:4px solid #0052ff; padding-left:20px;"><h3 style="color:#0052ff;">SOCIAL IGNITION</h3><p>Content assault. Base takeover.</p></div>
-                <div style="border-left:4px solid #ff4500; padding-left:20px;"><h3 style="color:#ff4500;">BLAZE PHOENIX LAUNCH</h3><p>Governance & Staking.</p></div>
-                <div style="border-left:4px solid #ffb700; padding-left:20px;"><h3 style="color:#ffb700;">NFT COLLECTION</h3><p>Memetic artifacts.</p></div>
-            </div>
-        </section>
-
-                <section class="glass-panel">
-            <h2 style="text-align: center; margin-bottom: 20px;">LIVE MARKET TERMINAL</h2>
-            <div style="width: 100%; height: 700px; border-radius: 20px; overflow: hidden; box-shadow: 0 0 60px rgba(255, 69, 0, 0.3); border: 2px solid #ff4500;">
-                <iframe src="https://dexscreener.com/base/0x5f9bc0b8ea184b001fbd771a1ac8d3e745d43443007477c94a5a87e6188f576a?embed=1&theme=dark&trades=0&info=0" width="100%" height="100%" style="border: none; display: block;"></iframe>
-            </div>
-                </section>
-        
-        <section style="text-align: center; margin: 60px 0;">
-            <h2>JOIN THE RESISTANCE</h2>
-            <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:20px; margin-top:30px;">
-                <a href="https://t.me/Blue_PhoenixOfficial" target="_blank" class="electric-btn"><i class="fa-brands fa-telegram"></i> TELEGRAM</a>
-                <a href="https://x.com/Blaze_Phoenix" target="_blank" class="electric-btn"><i class="fa-brands fa-x-twitter"></i> TWITTER</a>
-                <a href="https://base.app/profile/andwr" target="_blank" class="electric-btn"><i class="fa-solid fa-cube"></i> BASE SOCIAL</a>
-            </div>
-        </section>
-
-        <section class="glass-panel" style="border-color:#333; text-align:center;">
-            <h3 style="color:var(--accent);">❤️ SUPPORT THE PROJECT</h3>
-            <p style="color:#aaa; margin-bottom:15px;">Donations go to marketing & burns.</p>
-            <div style="background:#000; padding:15px; border:1px solid #555; display:inline-block; font-family:'Courier Prime'; color:var(--primary); word-break:break-all; margin:15px 0;">0x0e74E409031bD6F234A429674EC6e68e6c88a7C2</div>
-            <p>Contact: <span style="color:#fff;">a4ndr3w.j@gmail.com</span></p>
-            
-            <div style="border-top:1px solid #333; padding-top:20px; margin-top:30px; font-size:0.8rem; color:#666; text-align:justify;">
-                <strong>⚠️ RISK DISCLAIMER:</strong> This is a high-risk social experiment. $BLAZEP has NO intrinsic value. The value comes 100% from social consensus. <strong>DO NOT BET THE RENT MONEY.</strong>
-            </div>
-        </section>
-
-        <footer style="text-align: center; padding: 40px 20px; color: #666; font-family: 'Courier Prime';">
-            <p style="color:var(--primary); font-weight:bold;">© 2025 BLAZE PHOENIX</p>
-        </footer>
+    <div id="seq-vis" class="render-stage">
+      <canvas id="render-canvas"></canvas>
     </div>
 
-    <a href="https://app.uniswap.org/explore/tokens/base/0xB73a62a437be5B091c724B54D6c4d06bBe71d128" target="_blank" class="uni-popup">🦄 BUY ON UNISWAP</a>
+    <div id="seq-core" class="render-stage">
+      <div class="data-lockup">
+        <div class="ring-outer"></div>
+        <div class="hex-frame">
+          <video id="sys-video" autoplay muted loop playsinline>
+            <source src="grok_video_2025-12-22-16-28-28.mp4" type="video/mp4">
+          </video>
+          <div class="hex-mask"></div>
+        </div>
+      </div>
+      <div class="msg-container">
+        <h2 id="sys-msg" class="primary-text">$BZPX</h2>
+        <div class="alert-ticker">
+          <span>⚠ BLAZEPHOENIX PROTOCOL ACTIVE ⚠ BASE CHAIN L2 ⚠ INTELLIGENT ROUTING ⚠</span>
+        </div>
+      </div>
+    </div>
 
-        <script>
-function googleTranslateElementInit() {
-    new google.translate.TranslateElement(
-        {
-            pageLanguage: 'en',
-            includedLanguages: 'en,pt,es,fr,de,it,ru,ar,zh-CN,ja,ko,hi,bn',
-            layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
-            autoDisplay: false
-        },
-        'google_translate_element'
-    );
-}
+    <div id="seq-out" class="white-out"></div>
+  </div>
+
+  <style>
+    html, body { margin: 0; padding: 0; width: 100%; height: 100%; background-color: #000000; }
+    .sys-container { position: fixed; top: 0; left: 0; right: 0; bottom: 0; width: 100%; height: 100%; background: #000; z-index: 2147483646; overflow: hidden; font-family: 'JetBrains Mono', 'Courier New', monospace; cursor: none; display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: -webkit-fill-available; }
+    .scan-layer { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(rgba(18,16,16,0) 50%, rgba(0,0,0,0.25) 50%); background-size: 100% 2px; pointer-events: none; z-index: 20; opacity: 0.25; }
+    .static-layer { position: absolute; top: 0; left: 0; width: 100%; height: 100%; opacity: 0.04; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyBAMAAADsEZWCAAAAGFBMVEUAAAA5OTkAAABMTExERERmZmYzMzNmZmZPCt0OAAAACHRSTlMAMwAqzMzMzM0Cj44QAAAAJklEQVQ4y2NgwA04GfABUjQGgxBwdQYxCoMwCgNnFEYiUBhI0RgA4S4X7y21wAAAAABJRU5ErkJggg=='); pointer-events: none; z-index: 19; animation: noiseShift 0.2s infinite; }
+    .ghost-render { position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); font-size: 12vw; font-weight: 900; color: rgba(20,20,20,0.1); z-index: 5; opacity: 0; pointer-events: none; text-transform: uppercase; white-space: nowrap; }
+    .render-stage { position: absolute; top: 0; left: 0; width: 100%; height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; opacity: 0; transition: opacity 0.5s ease; pointer-events: none; }
+    .render-stage.active { opacity: 1; pointer-events: auto; }
+    .console-log { width: 90%; max-width: 600px; color: #0052FF; text-align: left; }
+    .log-output p { margin: 5px 0; font-size: 13px; text-shadow: 0 0 5px #0052FF; }
+    .load-wrapper { width: 100%; height: 20px; border: 2px solid #0052FF; margin-top: 30px; position: relative; padding: 2px; }
+    .load-bar { height: 100%; background: #0052FF; width: 0%; box-shadow: 0 0 15px #0052FF; transition: width 0.1s linear; }
+    #load-val { position: absolute; top: -25px; right: 0; color: #fff; font-weight: bold; }
+    .boot-header { font-size: clamp(2rem, 6vw, 3.5rem); color: #fff; text-align: center; margin-top: 40px; letter-spacing: 8px; opacity: 0; animation: sysBlink 0.5s infinite; font-family: 'Bebas Neue', sans-serif; }
+    #render-canvas { width: 100%; height: 100%; }
+    .data-lockup { position: relative; width: 280px; height: 280px; margin-bottom: 40px; }
+    .ring-outer { position: absolute; width: 100%; height: 100%; border: 2px dashed #0052FF; border-radius: 50%; animation: spinData 10s linear infinite; }
+    .hex-frame { position: absolute; top: 10%; left: 10%; width: 80%; height: 80%; clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%); background: #000; overflow: hidden; }
+    #sys-video { width: 100%; height: 100%; object-fit: cover; transform: scale(1.2); }
+    .primary-text { font-size: clamp(3rem, 8vw, 4.5rem); color: #fff; text-transform: uppercase; margin: 0; text-shadow: 4px 4px 0 #0052FF; letter-spacing: 2px; animation: txtGlitch 0.3s infinite; font-family: 'Bebas Neue', sans-serif; }
+    .alert-ticker { margin-top: 15px; color: #ff3333; font-size: 0.75rem; letter-spacing: 2px; background: rgba(50,0,0,0.3); padding: 5px 20px; text-align: center; }
+    .white-out { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: #fff; opacity: 0; pointer-events: none; z-index: 1000; }
+    .msg-container { text-align: center; }
+    @keyframes sysBlink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
+    @keyframes spinData { 100% { transform: rotate(360deg); } }
+    @keyframes noiseShift { 0% { transform: translate(0,0); } 100% { transform: translate(10px,10px); } }
+    @keyframes txtGlitch { 0% { transform: translate(0); } 20% { transform: translate(-2px,2px); } 40% { transform: translate(2px,-2px); } 60% { transform: translate(-2px,-2px); } 80% { transform: translate(2px,2px); } 100% { transform: translate(0); } }
+    .blink { animation: sysBlink 1s infinite; }
+  </style>
+
+  <script>
+  (() => {
+    // Boot animation controller
+    const ROOT = document.getElementById('sys-overlay-root');
+    const BAR = document.querySelector('.load-bar');
+    const VAL = document.getElementById('load-val');
+    const seqInit = document.getElementById('seq-init');
+    const seqVis  = document.getElementById('seq-vis');
+    const seqCore = document.getElementById('seq-core');
+    const seqOut  = document.getElementById('seq-out');
+
+    const show = (el) => { el.classList.add('active'); };
+    const hide = (el) => { el.classList.remove('active'); };
+
+    // Phase 1: Loading bar
+    let pct = 0;
+    const loadInterval = setInterval(() => {
+      pct = Math.min(pct + Math.random() * 8 + 2, 100);
+      if(BAR) BAR.style.width = pct + '%';
+      if(VAL) VAL.innerText = Math.floor(pct) + '%';
+      if(pct >= 100) clearInterval(loadInterval);
+    }, 80);
+
+    // Phase 2: Canvas spiral
+    setTimeout(() => {
+      hide(seqInit);
+      show(seqVis);
+      const c = document.getElementById('render-canvas');
+      if(c) {
+        const ctx = c.getContext('2d');
+        c.width = window.innerWidth; c.height = window.innerHeight;
+        let ang = 0;
+        const draw = () => {
+          ctx.clearRect(0,0,c.width,c.height);
+          ctx.save();
+          ctx.translate(c.width/2, c.height/2);
+          ctx.rotate(ang);
+          for(let i=0; i<20; i++){
+            ctx.beginPath();
+            ctx.strokeStyle = i%2===0 ? '#0052FF' : '#111';
+            ctx.lineWidth = i%3===0 ? 2 : 1;
+            ctx.arc(0,0,i*18,0,Math.PI*1.5);
+            ctx.stroke();
+          }
+          ctx.restore();
+          ang += 0.05;
+          if(document.getElementById('seq-vis').classList.contains('active')) requestAnimationFrame(draw);
+        };
+        draw();
+      }
+    }, 3200);
+
+    // Phase 3: Core logo
+    setTimeout(() => {
+      hide(seqVis);
+      show(seqCore);
+    }, 5200);
+
+    // Phase 4: White flash & reveal
+    setTimeout(() => {
+      if(seqOut) { seqOut.style.opacity = '1'; seqOut.style.transition = 'opacity 0.4s'; }
+      setTimeout(() => {
+        if(ROOT) ROOT.style.display = 'none';
+        document.body.classList.remove('noscroll');
+        document.documentElement.style.overflow='auto';document.body.style.overflow='auto';document.body.style.position='';document.body.style.height='';
+        window.scrollTo(0,0);
+      }, 400);
+    }, 7200);
+
+    // Safety net
+    setTimeout(() => {
+      if(ROOT) ROOT.style.display = 'none';
+      document.body.classList.remove('noscroll');
+      document.documentElement.style.overflow='auto';document.body.style.overflow='auto';document.body.style.position='';document.body.style.height='';
+    }, 9000);
+  })();
+  </script>
+
+  <!-- ============ MAIN CONTENT ============ -->
+  <div class="background"></div>
+
+  <div class="container">
+
+    <!-- HEADER -->
+    <header>
+      <div class="logo">
+        <img src="https://blazephoenix.xyz/og-image.jpg" alt="Blaze Phoenix Logo">
+        <video autoplay muted loop playsinline webkit-playsinline>
+          <source src="grok_video_2025-12-22-16-28-28.mp4" type="video/mp4">
+        </video>
+      </div>
+      <h1>BLAZE PHOENIX</h1>
+      <p class="subtitle">$BZPX — THE PROTOCOL THAT RISES</p>
+      <div class="header-badges">
+        <span class="badge">BASE CHAIN L2</span>
+        <span class="badge">0% TAX</span>
+        <span class="badge fire">100B SUPPLY</span>
+        <span class="badge">75% LIQUIDITY LOCKED</span>
+        <span class="badge">DeFi AGGREGATOR</span>
+      </div>
+    </header>
+
+    <!-- INTRO -->
+    <section class="intro-section">
+      <p><strong>PHOENIX RISING: THE PROTOCOL IS LIVE</strong></p>
+      <p>In 1988, <em>The Economist</em> published a legendary cover predicting a global world currency rising from the ashes of burning fiat. They called it the Phoenix. They expected centralized control by the elites.</p>
+      <p><strong>BLAZE PHOENIX ($BZPX)</strong> is the unauthorized execution of that prophecy. It represents a narrative-driven "Great Reset" where irony becomes reality and memes become movements. We are not here to propose a new banking system — we are here to press the giant power button, burn the old rules, and let the flames consume everything they built.</p>
+      <p>Behind the narrative lives a genuinely sophisticated DeFi protocol — a self-contained multi-route aggregation and intelligent execution engine built on Base Chain, engineered for permanence. The contracts are live. The liquidity is locked. The keys are gone.</p>
+      <div class="intro-quote">"They predicted the fire. They didn't predict who would light the match — or who would build the protocol."</div>
+    </section>
+
+    <!-- STATS -->
+    <div class="stats-grid">
+      <div class="stat-box">
+        <div class="label">Total Supply</div>
+        <div class="value">100B</div>
+      </div>
+      <div class="stat-box">
+        <div class="label">Market Liquidity</div>
+        <div class="value">75%</div>
+      </div>
+      <div class="stat-box">
+        <div class="label">Ticker</div>
+        <div class="value">$BZPX</div>
+      </div>
+      <div class="stat-box">
+        <div class="label">Holders</div>
+        <div class="value" id="stat-holders">—</div>
+      </div>
+      <div class="stat-box">
+        <div class="label">Team Locked</div>
+        <div class="value">15B</div>
+      </div>
+      <div class="stat-box">
+        <div class="label">Network</div>
+        <div class="value">BASE L2</div>
+      </div>
+      <div class="stat-box">
+        <div class="label">Tax</div>
+        <div class="value">0%</div>
+      </div>
+    </div>
+
+    <!-- MARKET DATA -->
+    <h2>LIVE MARKET TERMINAL</h2>
+    <div class="live-data-grid">
+      <div class="live-data-card">
+        <div class="card-label">Current Price</div>
+        <div class="card-value" id="price">LOADING...</div>
+        <div class="card-subtext">Live · Base Chain</div>
+      </div>
+      <div class="live-data-card">
+        <div class="card-label">24h Change</div>
+        <div class="card-value" id="change">--%</div>
+        <div class="card-subtext">Volatility Index</div>
+      </div>
+      <div class="live-data-card">
+        <div class="card-label">Market Cap</div>
+        <div class="card-value" id="mcap">LOADING...</div>
+        <div class="card-subtext">Total Value</div>
+      </div>
+      <div class="live-data-card">
+        <div class="card-label">24h Volume</div>
+        <div class="card-value" id="vol24h">LOADING...</div>
+        <div class="card-subtext">Trading Activity</div>
+      </div>
+      <div class="live-data-card">
+        <div class="card-label">Liquidity</div>
+        <div class="card-value" id="liquidity">LOADING...</div>
+        <div class="card-subtext">Pool Depth</div>
+      </div>
+      <div class="live-data-card">
+        <div class="card-label">Total Supply</div>
+        <div class="card-value">100B</div>
+        <div class="card-subtext">$BZPX · Fixed · Immutable</div>
+      </div>
+    </div>
+
+    <!-- PROGRESS -->
+    <div class="progress-section">
+      <h3 style="color:#ff4500;font-family:'Bebas Neue';font-size:1.8rem;margin-bottom:15px;">PROGRESS TO $1 MILESTONE</h3>
+      <div class="progress-container">
+        <div class="progress-bar" id="progress-bar"></div>
+      </div>
+      <div style="display:flex;justify-content:space-between;font-weight:700;color:#aaa;margin-top:15px;">
+        <span>$0</span>
+        <span id="progress-text" style="color:#ff4500;">0.000000%</span>
+        <span>$1 TARGET</span>
+      </div>
+      <p id="reset-date" style="color:#ff4500;font-size:1.3rem;font-weight:900;margin-top:20px;">CALCULATING...</p>
+      <p id="reset-msg"  style="color:#aaa;font-size:0.92rem;">Analyzing on-chain momentum...</p>
+    </div>
+
+    <!-- WEALTH REDISTRIBUTION -->
+    <section class="wealth-section">
+      <h2 style="color:#ff4500;text-align:center;margin-bottom:10px;margin-top:0;">WEALTH REDISTRIBUTION IN REAL TIME</h2>
+      <p style="text-align:center;color:#aaa;margin-bottom:40px;font-size:1rem;">The 10 most influential figures in the new financial order — a satirical ledger.</p>
+      <div class="wealth-grid" id="wealthy-list"></div>
+      <div style="height:40px;"></div>
+
+      <div class="wealth-transfer-container">
+        <div class="transfer-header">
+          <h3>LIVE WEALTH TRANSFER</h3>
+          <div class="live-indicator"><span class="blink">●</span> REAL-TIME FEED</div>
+        </div>
+        <div style="height:1px;background:linear-gradient(90deg,transparent,#ff4500,transparent);margin-bottom:10px;"></div>
+        <div id="tx-feed" class="tx-feed">
+          <div class="tx-loading">Synchronizing with Base Chain...</div>
+        </div>
+      </div>
+
+      <!-- PHOENIX MODULE -->
+      <div class="px-container" style="margin-top:40px;">
+        <div class="px-header">
+          <span>:: PHOENIX_UPLINK ::</span>
+          <span id="pxStreak">STREAK: 0</span>
+        </div>
+        <div class="px-core-wrap">
+          <div class="px-core" id="pxCore"></div>
+        </div>
+        <div class="px-console" id="pxMessage">&gt; SYSTEM INITIALIZED. AWAITING DATA...</div>
+        <div class="px-stats">
+          <div class="px-stat-box">
+            <span class="px-val" id="pxPrice">...</span>
+            <span class="px-lbl">TOKEN PRICE</span>
+          </div>
+          <div class="px-stat-box">
+            <span class="px-val" id="pxMood">SCAN</span>
+            <span class="px-lbl">MARKET MOOD</span>
+          </div>
+          <div class="px-stat-box">
+            <span class="px-val">2026</span>
+            <span class="px-lbl">TARGET</span>
+          </div>
+        </div>
+        <div class="px-badges" id="pxBadges"></div>
+      </div>
+    </section>
+
+    <!-- ACTS OF REBELLION -->
+    <section>
+      <h2>THE LEGEND: 5 ACTS OF REBELLION</h2>
+      <div class="acts-section">
+        <div class="act">
+          <img src="Ima1.jpg" alt="Act I: The Arrogance" loading="lazy">
+          <h3>ACT I: THE ARROGANCE (1988–2020)</h3>
+          <p>"Get Ready for a World Currency." In 1988, <em>The Economist</em> published its infamous cover — a prophecy scrawled on gilded paper by those who assumed they held the pen of history. They built the blueprint in smoke-filled rooms. They prepared the architecture of control. Their fatal miscalculation: they underestimated the internet, and they never imagined a blockchain.</p>
+        </div>
+        <div class="act">
+          <img src="Ima2.jpg" alt="Act II: The Fragmented Resistance" loading="lazy">
+          <h3>ACT II: THE FRAGMENTED RESISTANCE (2020–2024)</h3>
+          <p>Bitcoin was the Shield. Ethereum was the Sword. The memecoins were the Jesters that no one took seriously — until they moved markets. The narrative was fractured. The green frog gasped under $50 transaction fees on chains that weren't built for the masses. The resistance needed a home. It needed speed. It needed <strong>Base</strong>.</p>
+        </div>
+        <div class="act">
+          <img src="Ima3.jpg" alt="Act III: The Mutation" loading="lazy">
+          <h3>ACT III: THE MUTATION (2025 – PRESENT)</h3>
+          <p>The legendary Phoenix migrated to Base. High-throughput, negligible fees, and a community infrastructure that actually works. The metamorphic event was complete. A DeFi aggregator wrapped in a narrative that cuts through the noise. <br><br><strong>$BZPX is the protocol that became the movement.</strong></p>
+        </div>
+        <div class="act">
+          <img src="Ima4.jpg" alt="Act IV: The Wildfire" loading="lazy">
+          <h3>ACT IV: THE WILDFIRE (Next 6 Months)</h3>
+          <p>The narrative spreads like a contagion through every community that still believes crypto can change the rules. The BlazePhoenix Protocol goes live. Routing intelligent trades across the entire Base ecosystem. Community positions itself. The fire emojis light up Telegram. The protocol handles volume. The architecture proves itself.</p>
+        </div>
+        <div class="act">
+          <img src="Ima5.jpg" alt="Act V: The Infinity" loading="lazy">
+          <h3>ACT V: THE INFINITY (Year 2+)</h3>
+          <p>There is no endgame. There is only the new standard. Institutions stop issuing rules for DeFi — communities write them. The 1988 prophecy is fulfilled, but the centralized version is dead, buried, and composted into fuel for the new ecosystem.<br><br><strong>The Phoenix sits on the protocol. The meme became the infrastructure. The narrative became the network.</strong></p>
+        </div>
+
+
+    <!-- TRIGGER THE RESET GAME -->
+<section class="roulette-section" id="great-reset-game">
+  <div style="text-align:center;">
+    <div style="color:#00f3ff;font-weight:900;letter-spacing:3px;margin-bottom:10px;text-transform:uppercase;font-size:0.85rem;">INTERACTIVE SIMULATION</div>
+    <h2 style="font-family:'Bebas Neue',sans-serif;font-size:clamp(2rem,6vw,3rem);color:#fff;letter-spacing:3px;margin:0 0 12px;text-shadow:0 0 20px rgba(255,69,0,0.3);">WHO WILL YOU BE AFTER THE RESET?</h2>
+    <p style="color:#9aa;max-width:700px;margin:0 auto;line-height:1.65;">
+      The fire consumes all classes. Press the button to simulate your fate.
+      <br>
+      <span style="display:inline-block;margin-top:12px;padding:10px 14px;border-radius:999px;border:1px solid rgba(255,183,0,0.55);background:rgba(255,183,0,0.08);color:#ffb700;font-weight:900;letter-spacing:0.5px;font-size:0.85rem;">
+        ⚠️ RARE EVENT: SATOSHI CARDS = 1/500,000 EACH (4 TOTAL) · WINNERS GET A CLAIM CODE
+      </span>
+    </p>
+  </div>
+
+  <div class="game-container">
+    <div class="nft-card-frame" id="nft-card" aria-live="polite">
+      <div class="nft-glitch-overlay"></div>
+      <div class="nft-image-container">
+        <img src="https://blazephoenix.xyz/og-image.jpg" id="nft-img" alt="Hidden Fate">
+        <div class="mystery-cover" id="mystery-cover"><span id="mystery-text">?</span></div>
+      </div>
+      <div class="nft-info">
+        <h3 id="nft-name">SYSTEM READY</h3>
+        <p id="nft-desc">Waiting for input...</p>
+      </div>
+    </div>
+
+    <div class="game-controls">
+      <button class="btn btn-primary glitch-btn" id="reset-btn" type="button" style="width:100%;padding:16px;font-size:1.1rem;letter-spacing:2px;background:linear-gradient(135deg,#ff4500,#ff6b00);border:2px solid #ff4500;box-shadow:0 0 30px rgba(255,69,0,0.5);">
+        <span class="btn-text">⚡ TRIGGER THE RESET</span>
+      </button>
+      <div id="share-buttons-container" style="display:none;width:100%;flex-direction:column;gap:12px;margin-top:12px;">
+        <a id="btn-base" href="#" target="_blank" rel="noopener" class="btn btn-primary" style="background:#4c40e6;border-color:#4c40e6;box-shadow:0 0 20px rgba(76,64,230,0.5);width:100%;text-align:center;display:flex;justify-content:center;align-items:center;font-weight:900;">SHARE ON BASE 🟣</a>
+        <a id="btn-x" href="#" target="_blank" rel="noopener" class="btn" style="width:100%;text-align:center;border:1px solid #444;color:#ccc;display:flex;justify-content:center;align-items:center;background:transparent;">POST ON 𝕏</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="roulette-overlay" id="roulette-overlay" style="display:none;">
+    <div class="overlay-inner">
+      <div class="overlay-title" id="overlay-title">CONGRATULATIONS</div>
+      <div class="overlay-sub" id="overlay-sub">The algorithm blinked.</div>
+      <div class="overlay-code" id="overlay-code" style="display:none;">
+        <div class="overlay-code-label">SECURE CLAIM CODE</div>
+        <div class="overlay-code-value" id="overlay-code-value">----</div>
+        <div class="overlay-code-foot">Screenshot this. Then claim in Base/Telegram.</div>
+      </div>
+      <button class="btn overlay-close" id="overlay-close" type="button" style="margin-top:16px;background:transparent;border:1px solid #555;color:#ccc;padding:10px 24px;">CLOSE</button>
+    </div>
+    <div class="sparks" id="sparks"></div>
+  </div>
+</section>
+
+<style>
+  .roulette-section{padding:70px 20px;background:radial-gradient(circle at center,#0a1525 0%,#000 100%);border-top:1px solid #1a1a2e;border-bottom:1px solid #1a1a2e;text-align:center;overflow:hidden;position:relative;}
+  .game-container{display:flex;flex-direction:column;align-items:center;gap:24px;margin-top:40px;width:100%;}
+  .nft-card-frame{width:100%;max-width:300px;aspect-ratio:3/4.2;background:#000;border:4px solid #333;border-radius:16px;position:relative;overflow:hidden;box-shadow:0 0 50px rgba(0,0,0,0.9);transition:all 0.2s;margin:0 auto;}
+  .nft-card-frame.shaking{animation:cardShake 0.1s infinite;border-color:#ff4500;box-shadow:0 0 50px rgba(255,69,0,0.5);}
+  .nft-card-frame.god{border-color:#FFD700!important;box-shadow:0 0 120px rgba(255,215,0,0.85),0 0 60px rgba(255,255,255,0.55)!important;}
+  .nft-image-container{width:100%;height:65%;position:relative;background:#111;overflow:hidden;}
+  .nft-image-container img{width:100%;height:100%;object-fit:cover;transform:scale(1.02);}
+  .mystery-cover{position:absolute;inset:0;background:repeating-linear-gradient(45deg,#000,#000 10px,#111 10px,#111 20px);display:flex;align-items:center;justify-content:center;z-index:10;transition:opacity 0.3s;}
+  #mystery-text{font-family:'Bebas Neue',sans-serif;font-size:80px;color:#333;}
+  .nft-info{height:35%;padding:10px 15px;background:linear-gradient(180deg,#050505,#0a0a0a);border-top:2px solid #333;display:flex;flex-direction:column;justify-content:center;align-items:center;}
+  .nft-info h3{color:#fff;font-family:'Bebas Neue',sans-serif;font-size:1.5rem;margin:0 0 5px;letter-spacing:1px;text-transform:uppercase;text-align:center;}
+  .nft-info p{color:#9aa;font-size:0.85rem;margin:0;line-height:1.35;text-align:center;}
+  .game-controls{width:100%;max-width:300px;display:flex;flex-direction:column;align-items:center;gap:10px;}
+  .roulette-overlay{position:fixed;inset:0;background:radial-gradient(circle at 50% 20%,rgba(255,69,0,0.18),rgba(0,0,0,0.92));z-index:9999;display:none;align-items:center;justify-content:center;padding:18px;}
+  .roulette-overlay.god{background:radial-gradient(circle at 50% 20%,rgba(255,215,0,0.22),rgba(0,0,0,0.94));}
+  .overlay-inner{width:min(720px,94vw);border-radius:18px;border:1px solid rgba(255,255,255,0.15);background:rgba(0,0,0,0.75);box-shadow:0 0 60px rgba(255,69,0,0.2);padding:30px 24px;position:relative;overflow:hidden;text-align:center;}
+  .roulette-overlay.god .overlay-inner{box-shadow:0 0 90px rgba(255,215,0,0.3);border-color:rgba(255,215,0,0.35);}
+  .overlay-title{font-family:'Bebas Neue',sans-serif;letter-spacing:4px;font-size:clamp(2.2rem,7vw,3.6rem);color:#ff4500;text-shadow:0 0 18px rgba(255,69,0,0.4);animation:popIn 420ms ease-out both;}
+  .roulette-overlay.god .overlay-title{color:#FFD700;text-shadow:0 0 24px rgba(255,215,0,0.55);}
+  .overlay-sub{margin-top:10px;color:#cfcfcf;font-weight:700;letter-spacing:0.8px;}
+  .overlay-code{margin:16px auto 0;width:min(520px,96%);border-radius:14px;border:2px solid rgba(255,215,0,0.35);background:rgba(255,215,0,0.07);padding:16px;}
+  .overlay-code-label{color:#ffb700;font-weight:900;letter-spacing:2px;text-transform:uppercase;font-size:0.85rem;}
+  .overlay-code-value{margin-top:8px;font-family:monospace;font-weight:900;font-size:1.5rem;letter-spacing:3px;color:#00ff7b;text-shadow:0 0 14px rgba(0,255,123,0.35);word-break:break-word;}
+  .overlay-code-foot{margin-top:8px;color:#aab;font-size:0.82rem;}
+  .sparks{position:absolute;inset:0;pointer-events:none;overflow:hidden;}
+  .spark{position:absolute;width:6px;height:6px;border-radius:50%;background:#ff4500;opacity:0.95;animation:sparkFly 900ms ease-out forwards;box-shadow:0 0 18px rgba(255,69,0,0.55);}
+  .roulette-overlay.god .spark{background:#FFD700;box-shadow:0 0 22px rgba(255,215,0,0.65);}
+  @keyframes sparkFly{0%{transform:translate(var(--x0),var(--y0)) scale(0.8);opacity:0;}15%{opacity:1;}100%{transform:translate(var(--x1),var(--y1)) scale(1.4);opacity:0;}}
+  @keyframes popIn{0%{transform:scale(0.85);opacity:0;filter:blur(6px);}100%{transform:scale(1);opacity:1;filter:blur(0);}}
+  @keyframes cardShake{0%{transform:translate(1px,1px) rotate(0deg);}10%{transform:translate(-1px,-2px) rotate(-1deg);}20%{transform:translate(-3px,0px) rotate(1deg);}30%{transform:translate(3px,2px) rotate(0deg);}40%{transform:translate(1px,-1px) rotate(1deg);}50%{transform:translate(-1px,2px) rotate(-1deg);}}
+</style>
+
+<script>
+(() => {
+  const SITE_URL = "https://blazephoenix.xyz";
+  const claimEndpoint = "";
+
+  const characters = [
+    { name: "THE ROCKET MAN",  type: "elite",   img: "Elon.jpg",    narrative: "I survived the Reset. My rockets run on $BZPX now." },
+    { name: "MICRO-SOFT",      type: "elite",   img: "Bill.jpg",    narrative: "Blue Screen of Death? No. Blue Phoenix of Life." },
+    { name: "THE ORACLE",      type: "zombie",  img: "Buffet.jpg",  narrative: "I missed Bitcoin. I missed Ethereum. I did not miss the Reset." },
+    { name: "MONEY PRINTER",   type: "control", img: "Fed.jpg",     narrative: "Brrr went broken. The fire burned the printer." },
+    { name: "PRIME DELIVERY",  type: "elite",   img: "Jeff.jpg",    narrative: "My warehouses are empty. Only justice is delivered." },
+    { name: "THE LIZARD KING", type: "elite",   img: "Mark.jpg",    narrative: "I tried to build the Metaverse. The Phoenix burned it down." },
+    { name: "THE TRADER GOD",  type: "pumpet",  img: "Nancy.jpg",   narrative: "Inside trading doesn't work when the market is chaos." },
+    { name: "THE JAIL BIRD",   type: "prison",  img: "Sam.jpg",     narrative: "I tried to gamble with your money. I lost my soul." },
+    { name: "THE PUPPETEER",   type: "master",  img: "Shadows.jpg", narrative: "Centuries of planning. Ruined by a protocol on Base." },
+    { name: "THE WEF MASTER",  type: "master",  img: "Klaus.jpg",   narrative: "You will own everything and you will be happy." },
+    { name: "THE SORCERER",    type: "elite",   img: "Soros.jpg",   narrative: "I broke the system. The system broke me back." },
+    { name: "ETH FATHER",      type: "builder", img: "Vitalik.jpg", narrative: "The merge is complete. The Phoenix keeps shipping." },
+    { name: "THE HIDDEN HAND", type: "elite",   img: "Ocult.jpg",   narrative: "You don't know my name. But I own your debt." },
+    { name: "THE WAGIE",       type: "wagie",   img: "https://placehold.co/300x400/8b0000/ffd700?text=WAGIE", narrative: "SYSTEM FAILURE. Back to the fryer. $BZPX is your only escape." }
+  ];
+
+  const satoshiCards = [
+    { key:"S1", name:"SATOSHI NAKAMOTO", type:"god", img:"Satoshi1.jpg",  narrative:"GENESIS FOUND. You broke the simulation." },
+    { key:"S2", name:"THE CREATOR",      type:"god", img:"Satochi2.jpg", narrative:"NOT YOUR KEYS, NOT YOUR COINS. Except these ones." },
+    { key:"S3", name:"DIGITAL GHOST",    type:"god", img:"Satochi3.jpg", narrative:"I am not one. I am all. You have been chosen." },
+    { key:"S4", name:"THE ARCHITECT",    type:"god", img:"Satochi4.jpg", narrative:"The system is dead. Long live the code." }
+  ];
+
+  const slowPhrases = ["CALCULATING SOCIAL SCORE...","DELETING YOUR BROWSER HISTORY...","CHECKING CAYMAN ISLANDS...","DRAINING YOUR WALLET...","CONTACTING THE ILLUMINATI...","EATING BUGS..."];
+  const fastPhrases = ["ACCESS GRANTED","OVERRIDE","SYSTEM FAILURE","BYPASSING FIREWALL","DECRYPTING...","UPLOADING...","ERROR 404","ROOT ACCESS","SEARCHING...","FOUND...","CONNECTING..."];
+
+  const cardFrame = document.getElementById("nft-card");
+  const cover = document.getElementById("mystery-cover");
+  const mysteryText = document.getElementById("mystery-text");
+  const nameEl = document.getElementById("nft-name");
+  const descEl = document.getElementById("nft-desc");
+  const imgEl = document.getElementById("nft-img");
+  const resetBtn = document.getElementById("reset-btn");
+  const shareContainer = document.getElementById("share-buttons-container");
+  const btnBase = document.getElementById("btn-base");
+  const btnX = document.getElementById("btn-x");
+  const overlay = document.getElementById("roulette-overlay");
+  const overlayTitle = document.getElementById("overlay-title");
+  const overlaySub = document.getElementById("overlay-sub");
+  const overlayCodeBox = document.getElementById("overlay-code");
+  const overlayCodeValue = document.getElementById("overlay-code-value");
+  const overlayClose = document.getElementById("overlay-close");
+  const sparksEl = document.getElementById("sparks");
+
+  const sleep = ms => new Promise(r => setTimeout(r, ms));
+  const setBtnText = txt => { const s = resetBtn.querySelector(".btn-text"); if(s) s.innerText = txt; };
+
+  function spawnSparks(mode="normal"){
+    sparksEl.innerHTML = "";
+    const n = mode==="god" ? 110 : 60;
+    for(let i=0;i<n;i++){
+      const s = document.createElement("div"); s.className="spark";
+      const x0=(Math.random()*100).toFixed(2)+"vw", y0=(Math.random()*100).toFixed(2)+"vh";
+      const x1=(Math.random()*140-20).toFixed(2)+"vw", y1=(Math.random()*140-20).toFixed(2)+"vh";
+      s.style.setProperty("--x0",x0); s.style.setProperty("--y0",y0);
+      s.style.setProperty("--x1",x1); s.style.setProperty("--y1",y1);
+      s.style.animationDelay=(Math.random()*180).toFixed(0)+"ms";
+      sparksEl.appendChild(s);
+    }
+  }
+
+  function openOverlay({mode="normal",title="CONGRATULATIONS",sub="The algorithm blinked.",code=null}){
+    overlay.classList.toggle("god",mode==="god");
+    overlayTitle.innerText=title; overlaySub.innerText=sub;
+    if(code){ overlayCodeBox.style.display="block"; overlayCodeValue.innerText=code; }
+    else { overlayCodeBox.style.display="none"; }
+    spawnSparks(mode); overlay.style.display="flex";
+  }
+
+  overlayClose.addEventListener("click",()=>{ overlay.style.display="none"; sparksEl.innerHTML=""; });
+
+  function pickResult(){
+    const roll = Math.floor(Math.random()*500000)+1;
+    if(roll<=4) return satoshiCards[roll-1];
+    return characters[Math.floor(Math.random()*characters.length)];
+  }
+
+  function generateClaimCode(prefix){
+    const cs="ABCDEFGHJKLMNPQRSTUVWXYZ23456789"; let mid="";
+    for(let i=0;i<6;i++) mid+=cs[Math.floor(Math.random()*cs.length)];
+    return `GENESIS-${prefix}-${mid}-SATOSHI`;
+  }
+
+  let running=false;
+
+  async function spinRoulette(){
+    if(running) return; running=true;
+    shareContainer.style.display="none"; resetBtn.disabled=true;
+    setBtnText("INITIALIZING..."); cover.style.opacity="1";
+    cardFrame.classList.add("shaking"); cardFrame.classList.remove("god");
+    cardFrame.style.borderColor="#333"; nameEl.style.color="#fff";
+    nameEl.style.textShadow="none"; descEl.innerText="PLEASE WAIT...";
+    mysteryText.innerText="?"; mysteryText.style.opacity="1"; mysteryText.style.color="#333";
+
+    for(let i=0;i<5;i++){
+      setBtnText("ANALYZING..."); nameEl.innerText=slowPhrases[i%slowPhrases.length];
+      descEl.innerText="COMPLYING WITH THE RESET...";
+      mysteryText.style.opacity=(i%2===0)?"1":"0.55";
+      await sleep(2000);
+    }
+    for(let i=0;i<50;i++){
+      setBtnText("HACKING..."); nameEl.innerText=fastPhrases[Math.floor(Math.random()*fastPhrases.length)];
+      nameEl.style.color="#00ff00"; nameEl.style.textShadow="0 0 12px rgba(0,255,0,0.55)";
+      descEl.innerText="BRUTE FORCING THE ELITES...";
+      mysteryText.style.opacity=(i%2===0)?"1":"0";
+      mysteryText.style.color=(i%3===0)?"#ff0000":"#ffffff";
+      mysteryText.innerText=(i%5===0)?"!":"?";
+      await sleep(100);
+    }
+
+    const result=pickResult();
+    cardFrame.classList.remove("shaking"); cover.style.opacity="0";
+    imgEl.src=result.img; nameEl.innerText=result.name;
+    let viralText="", claimCode=null;
+
+    if(result.type==="god"){
+      cardFrame.classList.add("god"); nameEl.style.color="#FFD700"; nameEl.style.textShadow="0 0 22px rgba(255,215,0,0.6)";
+      claimCode=generateClaimCode(result.key);
+      descEl.innerHTML=`<div style="margin-top:8px;padding:12px;border-radius:12px;border:2px solid rgba(255,215,0,0.35);background:rgba(0,0,0,0.55);box-shadow:0 0 25px rgba(255,215,0,0.12);"><div style="color:#FFD700;font-weight:900;letter-spacing:2px;">🏆 SATOSHI EVENT TRIGGERED</div><div style="color:#cfcfcf;font-size:0.82rem;margin-top:6px;">Take a screenshot. The system will deny this happened.</div><div style="margin-top:10px;font-family:monospace;font-size:1.2rem;letter-spacing:2px;color:#00ff7b;text-shadow:0 0 12px rgba(0,255,123,0.35);">${claimCode}</div></div>`;
+      const claimMsg=`🚨 I HIT A SATOSHI CARD (RARE AIRDROP) 🚨%0A%0AFate: ${result.name}%0AClaim Code: ${encodeURIComponent(claimCode)}%0A%0AThe Great Reset is live. Roll yours 👇`;
+      btnBase.innerHTML="🏆 CLAIM PRIZE (BASE)"; btnBase.style.backgroundColor="#FFD700"; btnBase.style.borderColor="#FFD700"; btnBase.style.color="#000"; btnBase.style.boxShadow="0 0 30px rgba(255,215,0,0.65)";
+      btnBase.href=`https://warpcast.com/~/compose?text=${claimMsg}&embeds[]=${SITE_URL}`;
+      btnX.innerHTML="POST CLAIM ON 𝕏"; btnX.style.borderColor="#FFD700"; btnX.style.color="#FFD700";
+      btnX.href=`https://twitter.com/intent/tweet?text=${claimMsg}&url=${SITE_URL}&hashtags=BZPX,Base,Satoshi`;
+      openOverlay({mode:"god",title:"CONGRATULATIONS",sub:"You just did what 499,999 people did NOT. Claim it before reality patches this.",code:claimCode});
+    } else if(result.type==="wagie"){
+      nameEl.style.color="#ff0000"; nameEl.style.textShadow="0 0 12px rgba(255,0,0,0.5)"; cardFrame.style.borderColor="#ff0000"; descEl.innerText=result.narrative;
+      viralText=`⚠️ SYSTEM ERROR.%0A%0AThe algorithm sent me back.%0AFate: ${result.name}%0AStatus: BROKE.%0A%0ATry your luck (rare airdrop inside) 👇`;
+      btnBase.innerHTML="SHARE ON BASE 🟣"; btnBase.style.backgroundColor="#4c40e6"; btnBase.style.borderColor="#4c40e6"; btnBase.style.color="#fff"; btnBase.style.boxShadow="0 0 20px rgba(76,64,230,0.6)";
+      btnBase.href=`https://warpcast.com/~/compose?text=${viralText}&embeds[]=${SITE_URL}`;
+      btnX.innerHTML="POST ON 𝕏"; btnX.style.borderColor="#444"; btnX.style.color="#ccc";
+      btnX.href=`https://twitter.com/intent/tweet?text=${viralText}&url=${SITE_URL}&hashtags=BZPX,Base`;
+      openOverlay({mode:"normal",title:"CONGRATULATIONS",sub:"You survived. For now. The system is still watching."});
+    } else {
+      nameEl.style.color="#00f3ff"; nameEl.style.textShadow="0 0 12px rgba(0,243,255,0.35)"; cardFrame.style.borderColor="#00f3ff"; descEl.innerText=result.narrative;
+      viralText=`🔓 ACCESS GRANTED.%0A%0AFate: ${result.name}%0AStatus: ELITE.%0A%0ARare airdrop exists. See your fate 👇`;
+      btnBase.innerHTML="SHARE ON BASE 🟣"; btnBase.style.backgroundColor="#4c40e6"; btnBase.style.borderColor="#4c40e6"; btnBase.style.color="#fff"; btnBase.style.boxShadow="0 0 20px rgba(76,64,230,0.6)";
+      btnBase.href=`https://warpcast.com/~/compose?text=${viralText}&embeds[]=${SITE_URL}`;
+      btnX.innerHTML="POST ON 𝕏"; btnX.style.borderColor="#444"; btnX.style.color="#ccc";
+      btnX.href=`https://twitter.com/intent/tweet?text=${viralText}&url=${SITE_URL}&hashtags=BZPX,Base`;
+      openOverlay({mode:"normal",title:"CONGRATULATIONS",sub:"You got a role. Not freedom. Share it."});
+    }
+
+    shareContainer.style.display="flex";
+    await sleep(result.type==="god"?12000:3500);
+    resetBtn.disabled=false; setBtnText(result.type==="god"?"YOU ARE LEGEND":"⚡ PLAY AGAIN");
+    running=false;
+  }
+
+  resetBtn.addEventListener("click", spinRoulette);
+})();
 </script>
 
-<script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-    <script>
-        // 1. INTRO & WAKE BUTTON COOL
-        function runMatrixSequence() {
-            const btn = document.getElementById('intro-btn');
-            const txt = document.getElementById('intro-text');
-            const vid = document.getElementById('intro-logo');
-            btn.innerHTML = "PROTOCOL ACTIVATED"; btn.style.color = "#00ff41"; btn.style.borderColor = "#00ff41"; btn.classList.add('activated');
-            vid.classList.add('active'); 
-            txt.style.color="#00ff41"; txt.innerText="MATRIX IS REAL...";
-            setTimeout(() => { txt.innerText="WE ARE LIVING IN A SIMULATION..."; }, 2000);
-            setTimeout(() => { txt.style.color="#0052ff"; txt.innerText="TAKE THE BLUE PILL."; }, 4500);
-            setTimeout(() => { document.getElementById('intro-overlay').style.opacity='0'; setTimeout(() => document.getElementById('intro-overlay').style.display='none', 1500); }, 6000);
+    <!-- LOCKED COINS VAULT -->
+    <section class="furnace-section">
+      <div class="furnace-title">🔒 CRYO-CHAMBER: LOCKED TOKENS</div>
+      <p style="color:#00f3ff;font-weight:700;font-size:1.05rem;margin-bottom:20px;">15,000,000,000 $BZPX SECURED IN THE VAULT</p>
+
+      <div class="burn-desc">
+        <p><strong>We didn't just lock the liquidity. We removed the keys from the equation.</strong></p>
+        <p>15 billion $BZPX tokens — representing the team allocation — are locked and verifiable on-chain with an 18-month linear vesting schedule. No early access. No admin override. No shortcuts. Every tranche releases on-chain automatically every 30 days. This is not a promise: it is mathematics encoded into an immutable ledger.</p>
+      </div>
+
+      <h3 style="margin-top:40px;color:#00f3ff;">🔒 VAULT — LOCKED TOKENS</h3>
+      <p style="color:#aaa;font-size:0.8rem;margin-bottom:6px;text-transform:uppercase;letter-spacing:1px;">Transaction Hash (Proof of Lock)</p>
+      <div id="addr-lock1"
+           onclick="copyVault('addr-lock1','0xe0b83fb787e82f0b29cba540b9a56c49a36643a47e7f5759dbd4930620a9040b','#00f3ff')"
+           style="background:rgba(0,0,0,0.5);padding:15px;border-radius:8px;font-family:'JetBrains Mono',monospace;color:#00f3ff;word-break:break-all;margin-bottom:15px;border:1px solid rgba(0,243,255,0.25);cursor:pointer;user-select:none;font-size:0.82rem;"
+           title="CLICK TO COPY">
+        0xe0b83fb787e82f0b29cba540b9a56c49a36643a47e7f5759dbd4930620a9040b
+      </div>
+
+      <div style="margin-top:10px;">
+        <a href="https://basescan.org/tx/0xe0b83fb787e82f0b29cba540b9a56c49a36643a47e7f5759dbd4930620a9040b" target="_blank" class="burn-link">🔍 View on BaseScan</a>
+      </div>
+
+      <div style="margin-top:30px;display:flex;flex-wrap:wrap;justify-content:center;gap:10px;">
+        <span class="vesting-badge">⏱ 18 Month Team Vesting</span>
+        <span class="vesting-badge">📅 Released Every 30 Days</span>
+        <span class="vesting-badge">🔒 15B Team Allocation</span>
+      </div>
+
+      <script>
+        function copyVault(elementId, address, originalColor) {
+          const el = document.getElementById(elementId);
+          navigator.clipboard.writeText(address).then(() => {
+            el.innerText = ">> SECURE HASH COPIED TO CLIPBOARD <<";
+            el.style.color = "#00FF41";
+            el.style.fontWeight = "bold";
+            el.style.borderColor = "#00FF41";
+            setTimeout(() => {
+              el.innerText = address;
+              el.style.color = originalColor;
+              el.style.fontWeight = "normal";
+              el.style.borderColor = "";
+            }, 1800);
+          }).catch(() => {});
         }
+      </script>
+    </section>
 
-        window.addEventListener('load', () => {
-            const consoleDiv = document.getElementById('seq-console');
-            const lines = ["> KERNEL: 01-01-2026", "> CPU: VANGUARD_CORE", "> CONNECTING TO BASE...", "> SMART_CONTRACT: 0xB73a...", "> EXECUTING RESET..."];
-            let delay = 0;
-            lines.forEach((line, index) => {
-                setTimeout(() => {
-                    const p = document.createElement('p'); p.style.margin="5px 0"; p.style.color="#0052ff"; p.innerText=line;
-                    consoleDiv.appendChild(p);
-                    if(index===lines.length-1) {
-                        setTimeout(() => {
-                            consoleDiv.style.display='none'; document.getElementById('seq-wakeup').style.display='flex';
-                            setTimeout(() => { if(document.getElementById('intro-overlay').style.display!=='none') runMatrixSequence(); }, 7000);
-                        }, 1000);
-                    }
-                }, delay); delay += 400;
-            });
-            initWealthList(); initTxFeed(); updateData();
-        });
+    <!-- CTA -->
+    <section class="cta-section">
+      <h2 class="cta-title" style="margin:0 0 10px;">STATUS: ACTIVE</h2>
+      <h3 style="font-size:1.8rem;color:#ff4500;margin-bottom:30px;font-family:'Bebas Neue';letter-spacing:3px;">JOIN THE MOVEMENT</h3>
+      <div class="buttons-grid">
+        <a href="https://app.uniswap.org/explore/tokens/base/0x57b2f1de1e5ffef837aa61cbce0cf304077ed661" target="_blank" class="btn btn-primary">🚀 BUY $BZPX</a>
+        <a href="https://t.me/Blue_PhoenixOfficial" target="_blank" class="btn btn-secondary">💬 TELEGRAM</a>
+        <a href="https://base.app/profile/andwr" target="_blank" class="btn btn-base">🔵 BASE SOCIAL</a>
+        <a href="https://x.com/Blaze_Phoenix" target="_blank" class="btn btn-twitter">𝕏 TWITTER / X</a>
+        <a href="#" target="_blank" class="btn btn-whitepaper">📄 WHITEPAPER</a>
+      </div>
+    </section>
 
-        // 2. LIVE DATA
-        function updateData() { document.getElementById('price').innerText="$0.000000142"; document.getElementById('change').innerText="+12.5%"; document.getElementById('mcap').innerText="$142.5K"; document.getElementById('progress-bar').style.width="0.01%"; }
+    <!-- SMART CONTRACT -->
+    <section class="contract-section">
+      <div class="contract-title">✅ $BZPX CONTRACT ADDRESS</div>
+      <div id="safe-contract" class="contract-address" onclick="copyContract()" title="Click to copy">
+        0x57b2f1de1e5ffef837aa61cbce0cf304077ed661
+      </div>
+      <div class="contract-links">
+        <a href="https://basescan.org/token/0x57b2f1de1e5ffef837aa61cbce0cf304077ed661" target="_blank">BaseScan</a>
+        <a href="https://www.dextools.io/app/base/pair-explorer/" target="_blank">DEXTools</a>
+        <a href="https://dexscreener.com/base/0x57b2f1de1e5ffef837aa61cbce0cf304077ed661" target="_blank">DexScreener</a>
+        <a href="https://www.geckoterminal.com/base/tokens/0x57b2f1de1e5ffef837aa61cbce0cf304077ed661" target="_blank">GeckoTerminal</a>
+      </div>
+      <br>
+      <a href="#" target="_blank" class="contract-launch-app">🚀 LAUNCH APP</a>
 
-        // 3. WEALTH LIST (IMAGENS CORRETAS & SÁTIRA)
-        function initWealthList() {
-            const list = [
-                {n:"Elon 'Space' Musk", q:"'My rockets need BLAZEP.'", s:"$500B", i:"elon.jpg"},
-                {n:"Jeff Bezos", q:"'Delivery cancelled.'", s:"ZERO", i:"jeff.jpg"},
-                {n:"Mark Zuckerberg", q:"'Metaverse burned.'", s:"REKT", i:"mark.jpg"},
-                {n:"Vitalik Buterin", q:"'Gas fees gone.'", s:"MAXI", i:"vitalik.jpg"},
-                {n:"Satoshi Nakamoto", q:"'I am back.'", s:"LOCKED", i:"satochi1.jpg"},
-                {n:"Bill Gates", q:"'Blue Screen of Death.'", s:"ERROR", i:"bill.jpg"},
-                {n:"The Shadows", q:"'We control the narrative.'", s:"INFINITE", i:"shadows.jpg"},
-                {n:"The Occult", q:"'You will never know us.'", s:"UNSEEN", i:"ocult.jpg"},
-                {n:"Klaus Schwab", q:"'You own nothing.'", s:"0", i:"klaus.jpg"},
-                {n:"George Soros", q:"'Market irrational.'", s:"SHORT", i:"soros.jpg"},
-                {n:"Sam Bankman", q:"'Oops.'", s:"JAIL", i:"sam.jpg"},
-                {n:"Andrew Jesus", q:"'Finishing Satochi Nakamoto work'", s:"BLAZEP OWNER", i:"?"},
-                {n:"Jerome Powell", q:"'Printer broken.'", s:"BRRR", i:"fed.jpg"}
-            ];
-            document.getElementById('wealth-list').innerHTML = list.map(e => `
-                <div class="wealth-item" style="display:grid; grid-template-columns:60px 1fr; gap:15px; align-items:center; background:rgba(255,255,255,0.05); padding:10px; border:1px solid #333;">
-                    <img src="${e.i}" style="width:50px; height:50px; border-radius:50%; object-fit:cover;" onerror="this.src='https://placehold.co/50x50/333/fff?text=?'">
-                    <div><div style="font-weight:bold;">${e.n}</div><div style="color:var(--matrix); font-size:0.8rem;">NET: ${e.s}</div><div style="font-style:italic; font-size:0.8rem; color:#888;">${e.q}</div></div>
+      <script>
+        function copyContract() {
+          const el = document.getElementById("safe-contract");
+          const addr = "0x57b2f1de1e5ffef837aa61cbce0cf304077ed661";
+          navigator.clipboard.writeText(addr).then(() => {
+            el.innerText = ">> COPIED TO CLIPBOARD <<";
+            el.style.color = "#00FF41";
+            el.style.fontWeight = "bold";
+            setTimeout(() => {
+              el.innerText = addr;
+              el.style.color = "";
+              el.style.fontWeight = "normal";
+            }, 1800);
+          }).catch(() => {});
+        }
+      </script>
+    </section>
+
+    <!-- BLAZEPHOENIX PROTOCOL -->
+    <section class="protocol-section" id="protocol">
+      <div class="protocol-inner">
+        <div style="text-align:center;">
+          <span class="protocol-kicker">BLAZEPHOENIX PROTOCOL</span>
+        </div>
+        <h2 class="protocol-title" style="margin:16px 0 12px;">THE ARCHITECTURE</h2>
+        <p class="protocol-subtitle">
+          A self-contained DeFi aggregation and intelligent execution engine deployed on Base Chain. Two proprietary smart contracts working in concert to deliver best-execution trades across any liquidity venue — automatically, atomically, and without compromise. The implementation is proprietary. What follows is what it does.
+        </p>
+
+        <div class="protocol-grid">
+          <!-- LIQUIDITY INTELLIGENCE -->
+          <div class="protocol-card">
+            <div class="protocol-card-icon">🌐</div>
+            <h3>LIQUIDITY INTELLIGENCE</h3>
+            <p>A permissioned on-chain registry that aggregates, validates, and continuously scores every liquidity source in the ecosystem. The result: a live, tamper-proof map of where the best prices exist at any given moment.</p>
+            <ul class="protocol-feat-list">
+              <li>Bond-secured registration for every liquidity source — bad actors post collateral and lose it if they lie. Scam pools are slashed automatically</li>
+              <li>Universal compatibility across all major pool architectures: V2, V3, V4, Stable, Curve, and fully custom venue types — unified in a single registry</li>
+              <li>On-chain TVL-weighted scoring that refreshes dynamically, feeding real-time quality signals to the execution layer with every block</li>
+              <li>Exponential Moving Average volume tracking per venue — the protocol knows which pools are alive and which are ghost liquidity</li>
+              <li>Gas-optimized bridge token pathfinding via bitmap indexing, supporting up to 256 bridge tokens for cross-asset routing</li>
+              <li>Automatic token-pair discovery: when a new pool is registered, the protocol maps it to its trading pairs without any manual input</li>
+              <li>Protocol-level market state events broadcast on-chain — observable by any external system monitoring the ecosystem</li>
+              <li>Guardian-controlled emergency circuit breaker: if anything looks wrong, the entire system pauses in one transaction</li>
+              <li>Fine-grained role separation: five distinct permission levels ensure no single key can unilaterally affect the system</li>
+            </ul>
+          </div>
+
+          <!-- EXECUTION ENGINE -->
+          <div class="protocol-card">
+            <div class="protocol-card-icon">⚡</div>
+            <h3>EXECUTION ENGINE</h3>
+            <p>Where intelligence becomes action. The execution layer consumes the live pool data and finds the optimal path for any swap — atomically, across multiple routes simultaneously, with MEV protection built into the architecture.</p>
+            <ul class="protocol-feat-list">
+              <li>Parallel multi-route execution: up to 3 simultaneous swap paths computed and compared in real-time, each with up to 8 intermediate hops</li>
+              <li>Neural-guided capital allocation: a dedicated computational layer determines the optimal distribution of any order across all active liquidity, minimising price impact</li>
+              <li>Intelligent order splitting across up to 8 weighted execution steps — large orders are broken into optimally-sized tranches to maximise output</li>
+              <li>Native MEV (Maximal Extractable Value) protection via a commit-reveal scheme: trade parameters are committed before revelation, making front-running economically unviable</li>
+              <li>Positive slippage capture and redistribution: when a trade executes better than quoted, the surplus returns to the trader and designated referral — not silently pocketed</li>
+              <li>Built-in referral and affiliate reward infrastructure — the fee structure supports configurable splits between the protocol, traders, and ecosystem partners</li>
+              <li>Preferred route memory for high-frequency pairs: commonly-traded routes are stored as shortcuts, eliminating redundant computation on every trade</li>
+              <li>Deposit and withdrawal execution for yield-bearing positions, extending the protocol beyond simple swaps into the full DeFi liquidity stack</li>
+              <li>Configurable deadline enforcement on every operation — no stale transactions, no silent failures</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- EXTENDED FEATURES ROW -->
+        <div style="margin-top:24px;display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px;">
+          <div class="protocol-card" style="border-color:rgba(255,183,0,0.4);">
+            <div class="protocol-card-icon">🧠</div>
+            <h3 style="color:#ffb700;">NEURAL ALLOCATION LAYER</h3>
+            <p>A dedicated computation module that sits between the registry and the execution engine. It models the full landscape of available liquidity and computes the mathematically optimal capital distribution for any given order size — in real-time, on every trade. No static routing tables. No manual configuration. Pure adaptive intelligence.</p>
+          </div>
+          <div class="protocol-card" style="border-color:rgba(0,243,255,0.4);">
+            <div class="protocol-card-icon">🔗</div>
+            <h3 style="color:#00f3ff;">UNIVERSAL VENUE SUPPORT</h3>
+            <p>The protocol treats every liquidity venue as a first-class citizen regardless of its architecture. Uniswap V2 forks, concentrated liquidity V3 pools, the new V4 hook system, Curve-style stable pools, and fully custom venue types all interact through the same adapter interface. One protocol. Every venue. No fragmentation.</p>
+          </div>
+          <div class="protocol-card" style="border-color:rgba(0,255,65,0.3);">
+            <div class="protocol-card-icon">📡</div>
+            <h3 style="color:#00ff41;">ON-CHAIN TRANSPARENCY</h3>
+            <p>Every significant protocol action emits an on-chain event: pool registrations, weight updates, volume recordings, adapter changes, route executions, and security events. The protocol is a live broadcast of its own state. External dashboards, analytics tools, and monitoring systems can observe everything without any off-chain infrastructure.</p>
+          </div>
+        </div>
+
+        <div class="protocol-highlight">
+          <h3>🛡️ SECURITY ARCHITECTURE</h3>
+          <p>Every critical function is protected by multiple independent security layers — not bolted on after deployment, but designed in from the first line of code. The threat model covers reentrancy, MEV extraction, scam pool injection, flash loan manipulation, and administrative key compromise.</p>
+          <div class="security-grid" style="margin-top:20px;">
+            <div class="sec-tag">EIP-1153 Transient Reentrancy Lock</div>
+            <div class="sec-tag">Commit-Reveal MEV Shield</div>
+            <div class="sec-tag">Role-Based Access Control (5 Tiers)</div>
+            <div class="sec-tag">Guardian Emergency Pause</div>
+            <div class="sec-tag">Bond Slashing · Anti-Scam Pool</div>
+            <div class="sec-tag">Deadline-Protected Execution</div>
+            <div class="sec-tag">Staticcall Gas Budget Limiting</div>
+            <div class="sec-tag">Pool Code + TVL Validation</div>
+            <div class="sec-tag">BUSL-1.1 License · 4yr Protection</div>
+            <div class="sec-tag">Solidity 0.8.28 · SafeCast · SafeERC20</div>
+          </div>
+        </div>
+
+        <div style="text-align:center;margin-top:40px;">
+          <p style="color:#555;font-size:0.8rem;font-family:'JetBrains Mono',monospace;letter-spacing:1px;">
+            SPDX: BUSL-1.1 · Deployed: March 2026 · Expires: March 2030 · Solidity 0.8.28 · Base Chain L2
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- TOKENOMICS + ROADMAP -->
+    <section class="tokenomics-roadmap" id="tokenomics">
+      <div class="tr-inner">
+
+        <div class="tr-header">
+          <div class="tr-kicker">SYSTEM MODULE</div>
+          <h2 class="tr-title">TOKENOMICS & ROADMAP</h2>
+          <p class="tr-subtitle">
+            Not promises. Not vibes. <span class="accent">Mathematics, transparency, and controlled scarcity.</span>
+          </p>
+        </div>
+
+        <!-- TOKENOMICS -->
+        <div class="tr-block">
+          <div class="tr-block-title">
+            <span class="tag">TOKENOMICS</span>
+            <h3>THE ALLOCATION</h3>
+          </div>
+
+          <div class="tok-grid">
+            <!-- 75% Liquidity -->
+            <div class="tok-card">
+              <div class="tok-top">
+                <div class="tok-pct">75%</div>
+                <div class="tok-name">MARKET LIQUIDITY</div>
+              </div>
+              <div class="tok-bar">
+                <div class="tok-bar-fill" style="width:75%;"></div>
+              </div>
+              <p class="tok-desc">75,000,000,000 $BZPX. Exchange liquidity. Locked on-chain. The floor exists and it is permanent.</p>
+              <div class="tok-foot">Status: <span class="ok">PERMA-LOCKED</span></div>
+            </div>
+
+            <!-- 15% Team Vesting -->
+            <div class="tok-card">
+              <div class="tok-top">
+                <div class="tok-pct">15%</div>
+                <div class="tok-name">TEAM VESTING</div>
+              </div>
+              <div class="tok-bar">
+                <div class="tok-bar-fill" style="width:15%;background:linear-gradient(90deg,#ffb700,#ff4500);"></div>
+              </div>
+              <p class="tok-desc">15,000,000,000 $BZPX. Released over 18 months. One tranche every 30 days. No early access. The team starves if the protocol starves.</p>
+              <div class="tok-foot">Status: <span class="warn">18-MONTH LINEAR VESTING</span></div>
+              <div class="vesting-timeline">
+                <h4>VESTING SCHEDULE</h4>
+                <div class="vesting-bar-wrap">
+                  <div class="vesting-bar-fill" style="width:100%;"></div>
                 </div>
-            `).join('');
+                <div class="vesting-steps">
+                  <div class="vest-step"><span class="v-month">M1</span>833M</div>
+                  <div class="vest-step"><span class="v-month">M3</span>833M</div>
+                  <div class="vest-step"><span class="v-month">M6</span>833M</div>
+                  <div class="vest-step"><span class="v-month">M9</span>833M</div>
+                  <div class="vest-step"><span class="v-month">M12</span>833M</div>
+                  <div class="vest-step"><span class="v-month">M15</span>833M</div>
+                  <div class="vest-step"><span class="v-month">M18</span>838M</div>
+                </div>
+                <p style="color:#666;font-size:0.72rem;margin-top:10px;font-family:'JetBrains Mono',monospace;">~833M $BZPX released every 30 days over 18 months</p>
+              </div>
+            </div>
+
+            <!-- 5% Airdrop -->
+            <div class="tok-card">
+              <div class="tok-top">
+                <div class="tok-pct">5%</div>
+                <div class="tok-name">COMMUNITY AIRDROP</div>
+              </div>
+              <div class="tok-bar">
+                <div class="tok-bar-fill" style="width:5%;"></div>
+              </div>
+              <p class="tok-desc">5,000,000,000 $BZPX reserved for early believers, community contributors, and protocol participants.</p>
+              <div class="tok-foot">Status: <span class="ok">COMMUNITY ONLY</span></div>
+            </div>
+
+            <!-- 10% Partners -->
+            <div class="tok-card">
+              <div class="tok-top">
+                <div class="tok-pct">10%</div>
+                <div class="tok-name">PARTNERS & GROWTH</div>
+              </div>
+              <div class="tok-bar">
+                <div class="tok-bar-fill" style="width:10%;background:linear-gradient(90deg,#0052ff,#00f3ff);"></div>
+              </div>
+              <p class="tok-desc">10,000,000,000 $BZPX allocated to exchange listings, strategic partnerships, and ecosystem marketing.</p>
+              <div class="tok-foot">Status: <span class="warn">CONTROLLED DEPLOYMENT</span></div>
+            </div>
+          </div>
+
+          <div class="tok-supply">
+            <div class="tok-supply-label">Total Supply</div>
+            <div class="tok-supply-value">100,000,000,000 <span class="accent">$BZPX</span></div>
+            <div class="tok-supply-note">0% transaction tax. Fixed supply. No minting function. Immutable.</div>
+          </div>
+        </div>
+
+        <!-- ROADMAP -->
+        <div class="tr-block" id="roadmap">
+          <div class="tr-block-title">
+            <span class="tag">ROADMAP</span>
+            <h3>THE PLAN</h3>
+          </div>
+
+          <div class="roadmap">
+            <div class="rm-item">
+              <div class="rm-num">01</div>
+              <div class="rm-content">
+                <div class="rm-date">JAN–MAR 2026</div>
+                <div class="rm-title">IGNITION</div>
+                <ul class="rm-list">
+                  <li>Protocol deployment and community launch on Base Chain.</li>
+                  <li>Site launch, social channels live across Base / Farcaster / X.</li>
+                  <li>Community infrastructure: Telegram, content engine, meme ops.</li>
+                  <li>Initial liquidity locked. Keys gone. Foundation set.</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="rm-item">
+              <div class="rm-num">02</div>
+              <div class="rm-content">
+                <div class="rm-date">APR–AUG 2026</div>
+                <div class="rm-title">PROTOCOL ACTIVATION</div>
+                <ul class="rm-list">
+                  <li><strong>BlazePhoenix Protocol routing engine goes live.</strong></li>
+                  <li>Partner integrations begin across Base ecosystem DEXs.</li>
+                  <li>Community reward campaigns and ecosystem quests.</li>
+                  <li>Exchange listing negotiations and marketing push.</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="rm-item rm-highlight">
+              <div class="rm-num">03</div>
+              <div class="rm-content">
+                <div class="rm-date">SEP–DEC 2026</div>
+                <div class="rm-title">ECOSYSTEM EXPANSION</div>
+                <p class="rm-quote">"The protocol that survives long enough to be useful becomes the standard."</p>
+                <div class="rm-box">
+                  Major exchange listings. Protocol volume metrics published. NFT collection <strong>The Great Reset</strong> — not art, a memetic artifact — drops on Base. Community governance discussions begin.
+                </div>
+              </div>
+            </div>
+
+            <div class="rm-item rm-faded">
+              <div class="rm-num">04</div>
+              <div class="rm-content">
+                <div class="rm-date">2027+</div>
+                <div class="rm-title">[CLASSIFIED]</div>
+                <p class="rm-mini">The protocol earns the right to speak about this phase by executing the previous three.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="rm-footer">
+            This roadmap is a direction, not a legal commitment. The one guaranteed feature: <span class="accent">the protocol keeps running.</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- GOOGLE TRANSLATE -->
+    <section class="translate-section">
+      <h2 style="color:#ff4500;text-align:center;font-family:'Bebas Neue',sans-serif;letter-spacing:2px;font-size:2rem;margin:0 0 12px;">🔥 THE PROTOCOL SPEAKS ALL LANGUAGES 🔥</h2>
+      <p style="color:#aaa;text-align:center;margin:12px 0 20px;font-size:1rem;">Decentralization has no mother tongue. Select yours.</p>
+      <div style="text-align:center;display:flex;justify-content:center;">
+        <div id="google_translate_element"></div>
+      </div>
+    </section>
+
+    <!-- DISCLAIMER -->
+    <section class="disclaimer">
+      <h3>⚠️ RISK DISCLAIMER</h3>
+      <p><strong>This is a high-risk digital asset.</strong> $BZPX has no guaranteed monetary value. It is not backed by any government, central bank, or physical commodity. Value is determined entirely by market consensus and community participation.</p>
+      <p><strong>Do not invest funds you cannot afford to lose in their entirety.</strong> Cryptocurrency markets are volatile. Price movements of -90% or greater are not exceptional in this asset class. Only participate if you understand and accept these risks in full.</p>
+      <p><strong>DYOR (Do Your Own Research).</strong> Do not rely on this website, social media posts, or third parties as investment advice. Read the contracts. Verify the on-chain data. Draw your own conclusions.</p>
+      <p><strong>Satire & Commentary:</strong> References to public figures, global events, and financial institutions in this project are satirical in nature and protected as free expression. This project does not constitute financial advice, legal advice, or endorsement by any third party.</p>
+      <p style="color:#ff4500;font-weight:700;font-size:1rem;margin-top:16px;">The liquidity is locked. The team vesting is on-chain and immutable. The mathematics is transparent. The rest is up to the market.</p>
+    </section>
+
+    <!-- SUPPORT -->
+    <section style="text-align:center;padding:40px;margin:60px 0;background:rgba(0,0,0,0.3);border:1px solid rgba(0,82,255,0.25);border-radius:14px;">
+      <h3 style="color:#ff4500;font-family:'Bebas Neue';font-size:1.8rem;margin-bottom:24px;letter-spacing:3px;">CONTACT & SUPPORT</h3>
+
+      <p style="color:#aaa;font-size:0.95rem;margin-bottom:6px;">Official Project Email:</p>
+      <a href="mailto:blazephoenixxyz@proton.me"
+         style="font-family:'JetBrains Mono',monospace;font-size:0.9rem;color:#ff4500;word-break:break-all;background:rgba(0,0,0,0.3);padding:14px 20px;border-radius:8px;display:inline-block;margin-bottom:28px;text-decoration:none;border:1px solid rgba(255,69,0,0.3);transition:all 0.3s;"
+         onmouseover="this.style.borderColor='#ff4500'" onmouseout="this.style.borderColor='rgba(255,69,0,0.3)'">
+        blazephoenixxyz@proton.me
+      </a>
+
+      <p style="color:#aaa;font-size:0.95rem;margin-bottom:6px;">Support Wallet (Base / ETH):</p>
+      <p style="font-family:'JetBrains Mono',monospace;font-size:0.82rem;color:#0052ff;word-break:break-all;background:rgba(0,0,0,0.3);padding:14px 20px;border-radius:8px;margin-bottom:0;border:1px solid rgba(0,82,255,0.2);">
+        0x8014771dbeAE5b046541b3C07e2EB2cA489C7b78
+      </p>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+      <p>© 2026 BLAZE PHOENIX | $BZPX | The Protocol Rises</p>
+      <p>Built on Base Chain L2 · BlazePhoenix Protocol · BUSL-1.1 Licensed</p>
+      <p style="color:#555;margin-top:12px;">The architecture is transparent. The liquidity is permanent. The community is the protocol.</p>
+    </footer>
+
+  </div><!-- end .container -->
+
+  <!-- Google Translate -->
+  <div id="google_translate_element_fixed" style="position:fixed;bottom:20px;right:20px;z-index:1000;display:none;"></div>
+
+  <!-- Google Translate -->
+  <script type="text/javascript">
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement({
+        pageLanguage: 'en',
+        includedLanguages: 'fr,de,it,pt,es,ru,ar,hi,zh-CN,ja,ko',
+        layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+        autoDisplay: false
+      }, 'google_translate_element');
+    }
+  </script>
+  <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit&amp;v=3"></script>
+
+  <!-- Analytics -->
+  <script data-collect-dnt="true" async src="https://scripts.simpleanalyticscdn.com/latest.js"></script>
+
+  <!-- MAIN JAVASCRIPT -->
+  <script>
+    // ---- CONFIG ----
+    const TOKEN_CONTRACT = "0x57b2f1de1e5ffef837aa61cbce0cf304077ed661";
+    const TOTAL_SUPPLY   = 100_000_000_000;
+    const LOCK_TX        = "0xe0b83fb787e82f0b29cba540b9a56c49a36643a47e7f5759dbd4930620a9040b";
+    const BASE_RPC_URL   = "https://mainnet.base.org";
+
+    let state = { price: 0, mcap: 0, change: 0, locked: 75_000_000_000, pair: null };
+
+    // ---- UTILS ----
+    function clamp(x, mn, mx) { return Math.min(Math.max(x, mn), mx); }
+    function fmtDate(d) {
+      try { return new Intl.DateTimeFormat('en-GB', { year:'numeric', month:'short', day:'2-digit' }).format(d); }
+      catch { return d.toDateString(); }
+    }
+
+    // ---- MARKET DATA ----
+    async function fetchMarketData() {
+      try {
+        const res  = await fetch(`https://api.dexscreener.com/latest/dex/tokens/${TOKEN_CONTRACT}`);
+        const data = await res.json();
+        if (data.pairs && data.pairs.length > 0) {
+          const best = data.pairs.find(p => p.chainId === 'base') || data.pairs[0];
+          state.pair   = best;
+          state.price  = parseFloat(best.priceUsd) || 0;
+          state.change = best.priceChange?.h24 || 0;
+          state.mcap   = state.price * TOTAL_SUPPLY;
+          updateUI();
         }
+      } catch (e) { console.error("Market fetch error", e); }
+    }
 
-        // 4. TX FEED
-        function initTxFeed() {
-            setInterval(() => {
-                const types = ["BUY", "SELL", "WHALE_MOVE"];
-                const color = ["#00ff41", "#ff3333", "#ffb700"][Math.floor(Math.random()*3)];
-                const div = document.createElement('div'); div.className='tx-line';
-                div.innerHTML = `<span style="color:${color}">[${types[Math.floor(Math.random()*3)]}]</span> ${(Math.random()*500000).toFixed(0)} BLAZEP <span style="color:#444">0xB73a...${Math.random().toString(16).substr(2,4)}</span>`;
-                document.getElementById('tx-feed').prepend(div); if(document.getElementById('tx-feed').children.length > 7) document.getElementById('tx-feed').lastChild.remove();
-            }, 2500);
+    // ---- UI UPDATE ----
+    function fmtNum(n) {
+      if(n>=1e9) return '$'+(n/1e9).toFixed(2)+'B';
+      if(n>=1e6) return '$'+(n/1e6).toFixed(2)+'M';
+      if(n>=1e3) return '$'+(n/1e3).toFixed(0)+'K';
+      return '$'+n.toFixed(2);
+    }
+
+    function updateUI() {
+      const priceEl = document.getElementById('price');
+      if (priceEl && state.price > 0) priceEl.innerText = '$' + state.price.toFixed(9);
+
+      const changeEl = document.getElementById('change');
+      if (changeEl && state.price > 0) {
+        const isPos = state.change >= 0;
+        changeEl.innerText = (isPos ? '+' : '') + state.change.toFixed(2) + '%';
+        changeEl.style.color = isPos ? '#00ff41' : '#ff4500';
+      }
+
+      const mcapEl = document.getElementById('mcap');
+      if (mcapEl && state.mcap > 0) mcapEl.innerText = fmtNum(state.mcap);
+
+      // Live Vol & Liquidity from pair data
+      if(state.pair) {
+        const volEl = document.getElementById('vol24h');
+        if(volEl && state.pair.volume && state.pair.volume.h24) {
+          volEl.innerText = fmtNum(parseFloat(state.pair.volume.h24));
         }
+        const liqEl = document.getElementById('liquidity');
+        if(liqEl && state.pair.liquidity && state.pair.liquidity.usd) {
+          liqEl.innerText = fmtNum(parseFloat(state.pair.liquidity.usd));
+        }
+        const holdersEl = document.getElementById('stat-holders');
+        if(holdersEl && state.pair.info && state.pair.info.holders) {
+          holdersEl.innerText = Number(state.pair.info.holders).toLocaleString();
+        }
+      }
 
-        // 5. ROLETA LOGIC (WAGIE VS SATOSHI)
-        const chars = [{name:"WAGIE",narr:"Back to work.", img:"mac.jpg"},{name:"ELITE",narr:"You survived.", img:"elon.jpg"}];
-        document.getElementById('reset-btn').addEventListener('click', async () => {
-            const btn = document.getElementById('reset-btn'); const card = document.getElementById('nft-card'); const cover = document.getElementById('mystery-cover');
-            btn.disabled = true; btn.innerText = "HACKING..."; cover.style.opacity = "1"; card.classList.add('shaking');
-            const txts = ["BYPASSING...", "DECRYPTING...", "ACCESSING..."];
-            for(let t of txts) { document.getElementById('nft-desc').innerText = t; await new Promise(r => setTimeout(r, 1000)); }
-            const isGod = Math.random() < 0.00002; // 1/50,000
-            const res = isGod ? {name:"SATOSHI NAKAMOTO",narr:"GENESIS FOUND.", img:"satochi1.jpg"} : chars[Math.floor(Math.random()*chars.length)];
-            cover.style.opacity = "0"; card.classList.remove('shaking');
-            document.getElementById('nft-name').innerText = res.name; document.getElementById('nft-desc').innerText = res.narr;
-            document.getElementById('nft-img').src = res.img;
-            if(isGod) { card.classList.add('god'); document.getElementById('roulette-overlay').style.display = "flex"; } else { card.classList.remove('god'); }
-            btn.disabled = false; btn.innerText = "SPIN AGAIN";
-            document.getElementById('share-controls').style.display = "flex";
-            const text = `I triggered the Reset on $BLAZEP. Fate: ${res.name}.`;
-            document.getElementById('btn-share-x').href = `https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}&url=https://blazephoenix.xyz`;
-            document.getElementById('btn-share-base').href = `https://warpcast.com/~/compose?text=${encodeURIComponent(text)}&embeds[]=https://blazephoenix.xyz`;
-        });
+      if (state.price > 0) {
+        const pct = (state.price / 1.0) * 100;
+        const pBar  = document.getElementById('progress-bar');
+        const pText = document.getElementById('progress-text');
+        if (pBar)  pBar.style.width = Math.max(pct, 1) + '%';
+        if (pText) pText.innerText = pct.toFixed(6) + '%';
+        estimateResetETA();
+      }
 
-        // 6. SUBLIMINAL
+      // Phoenix module price
+      const pxP = document.getElementById('pxPrice');
+      if (pxP && state.price > 0) pxP.innerText = '$' + state.price.toFixed(8);
+
+      const pxM = document.getElementById('pxMood');
+      if (pxM) {
+        if (state.change > 5)      { pxM.innerText = '🔥 BULLISH'; pxM.style.color = '#00ff41'; }
+        else if (state.change > 0) { pxM.innerText = '↑ RISING';  pxM.style.color = '#aaffa0'; }
+        else if (state.change > -5){ pxM.innerText = '↓ COOLING'; pxM.style.color = '#ffb700'; }
+        else                       { pxM.innerText = '❄ BEARISH'; pxM.style.color = '#ff4500'; }
+      }
+    }
+
+    function estimateResetETA() {
+      const dateEl = document.getElementById('reset-date');
+      const msgEl  = document.getElementById('reset-msg');
+      if (!dateEl || !msgEl) return;
+      const p = state.price;
+      if (!p || p <= 0) { dateEl.innerText = "CALCULATING..."; msgEl.innerText = "Awaiting price data..."; return; }
+      if (p >= 1.0) { dateEl.innerText = "MILESTONE REACHED"; msgEl.innerText = "Target hit."; return; }
+      const change = state.change || 0;
+      const liq    = state.pair ? (state.pair.liquidity?.usd || 0) : 0;
+      const vol    = state.pair ? (state.pair.volume?.h24 || 0) : 0;
+      let r = clamp(change / 100, 0.001, 0.05);
+      let v = liq > 0 ? clamp(vol / liq * 0.05, 0, 0.02) : 0;
+      r += v;
+      const days = Math.log(1.0 / p) / Math.log(1 + r);
+      const eta  = new Date(Date.now() + days * 86400000);
+      dateEl.innerText = fmtDate(eta);
+      dateEl.style.color = "#00ff41";
+      msgEl.innerHTML = `Speculative ETA · Growth: ${(r*100).toFixed(2)}%/day · <span style="font-size:0.8rem;color:#555">Not financial advice</span>`;
+    }
+
+    // ---- LIVE TX FEED ----
+    async function fetchLiveTransactions() {
+      const feedEl = document.getElementById('tx-feed');
+      if (!feedEl) return;
+      if (!state.pair) {
+        try {
+          const dexRes  = await fetch(`https://api.dexscreener.com/latest/dex/tokens/${TOKEN_CONTRACT}`);
+          const dexData = await dexRes.json();
+          if (dexData.pairs?.length > 0) state.pair = dexData.pairs.find(p => p.chainId === 'base') || dexData.pairs[0];
+          else { feedEl.innerHTML = '<div class="tx-loading">No liquidity pool found yet.</div>'; return; }
+        } catch { feedEl.innerHTML = '<div class="tx-loading">Connection error. Retrying...</div>'; return; }
+      }
+      try {
+        const gtUrl = `https://api.geckoterminal.com/api/v2/networks/base/pools/${state.pair.pairAddress}/trades`;
+        const res   = await fetch(gtUrl);
+        if (res.ok) {
+          const tData = await res.json();
+          if (tData.data?.length > 0) { renderTrades(tData.data.slice(0, 25), feedEl); }
+          else { feedEl.innerHTML = '<div class="tx-loading">No recent trades found.</div>'; }
+        } else {
+          feedEl.innerHTML = '<div class="tx-loading">Live feed rate limited. Refreshing soon...</div>';
+        }
+      } catch { feedEl.innerHTML = '<div class="tx-loading">Feed error. Retrying...</div>'; }
+    }
+
+    function renderTrades(trades, container) {
+      let html = '<div style="text-align:center;font-size:0.7em;color:#00ff41;margin-bottom:6px;font-family:\'JetBrains Mono\',monospace;">● REAL-TIME ON-CHAIN DATA</div>';
+      trades.forEach(t => {
+        const attr   = t.attributes;
+        const isBuy  = attr.kind === 'buy';
+        const val    = parseFloat(attr.volume_in_usd).toFixed(2);
+        const txTime = new Date(attr.block_timestamp);
+        const diff   = Math.floor((Date.now() - txTime) / 60000);
+        const timeStr = diff < 1 ? 'Just now' : (diff < 60 ? diff + 'm ago' : Math.floor(diff/60) + 'h ago');
+        const priceStr = parseFloat(attr.price_in_usd).toFixed(9);
+        html += `<div class="tx-item"><div style="display:flex;flex-direction:column;"><span class="${isBuy?'type-buy':'type-sell'}">${isBuy?'BUY':'SELL'}</span><span style="font-size:0.7em;color:#666;">${timeStr}</span></div><div style="text-align:right;"><span class="tx-value">$${val}</span><br><span style="font-size:0.7em;color:#888;">$${priceStr}</span></div></div>`;
+      });
+      container.innerHTML = html;
+    }
+
+    // ---- BILLIONAIRES LIST ----
+    const billionaires = [
+      { rank:1,  name:"Elon 'Rocket' Musk",    meme:"Pump Master",     hold:"420B $BZPX",  val:"$69T" },
+      { rank:2,  name:"Jeff 'Prime' Bezos",     meme:"Bald Eagle",      hold:"500B $BZPX",  val:"$104T" },
+      { rank:3,  name:"Larry 'Search' Page",    meme:"Algorithm God",   hold:"250B $BZPX",  val:"$52T" },
+      { rank:4,  name:"Bill 'Windows' Gates",   meme:"Vaccine Baron",   hold:"333B $BZPX",  val:"$69T" },
+      { rank:5,  name:"Mark 'Meta' Zuck",       meme:"Lizard King",     hold:"600B $BZPX",  val:"$124T" },
+      { rank:6,  name:"Warren 'Oracle' Buffett",meme:"Value Investor",  hold:"100B $BZPX",  val:"$20T" },
+      { rank:7,  name:"Satoshi Nakamoto",        meme:"The Ghost",       hold:"1T $BZPX",    val:"$999T" },
+      { rank:8,  name:"Vitalik Buterin",         meme:"ETH Lord",        hold:"69B $BZPX",   val:"$15T" },
+      { rank:9,  name:"CZ Binance",              meme:"Funds Safu",      hold:"88B $BZPX",   val:"$18T" },
+      { rank:10, name:"Brian Armstrong",         meme:"Base God",        hold:"999B $BZPX",  val:"$200T" }
+    ];
+
+    function renderBillionaires() {
+      const listEl = document.getElementById('wealthy-list');
+      if (!listEl) return;
+      billionaires.forEach(b => {
+        const card = document.createElement('div');
+        card.className = 'wealth-card';
+        card.innerHTML = `
+          <div class="wealth-rank">#${b.rank}</div>
+          <div class="wealth-name">${b.name}</div>
+          <div style="font-size:0.85rem;color:#ff4500;font-style:italic;margin:6px 0;">"${b.meme}"</div>
+          <div class="wealth-hold">${b.hold}</div>
+          <div style="font-size:0.82rem;color:#ffb700;font-weight:700;margin-top:4px;">Net Worth: ${b.val}</div>
+        `;
+        listEl.appendChild(card);
+      });
+    }
+
+    // ---- PHOENIX MODULE ----
+    function initPhoenixModule() {
+      const elMsg    = document.getElementById('pxMessage');
+      const elStreak = document.getElementById('pxStreak');
+      const elBadges = document.getElementById('pxBadges');
+
+      // Streak (localStorage — benign use for UI only)
+      try {
+        let user  = JSON.parse(localStorage.getItem('px_user') || '{"last":null,"s":0}');
+        const today = new Date().toDateString();
+        if (user.last !== today) {
+          const yest = new Date(); yest.setDate(yest.getDate() - 1);
+          user.s = (user.last === yest.toDateString()) ? user.s + 1 : 1;
+          user.last = today;
+          localStorage.setItem('px_user', JSON.stringify(user));
+        }
+        if (elStreak) elStreak.innerText = `STREAK: ${user.s} DAYS`;
+
+        const badges = [{d:1,i:'🥚',n:'EGG'},{d:3,i:'🔥',n:'SPARK'},{d:7,i:'💎',n:'DIAMOND'},{d:30,i:'🦅',n:'ASCENDED'}];
+        if (elBadges) {
+          badges.forEach(b => {
+            if (user.s >= b.d) {
+              const el = document.createElement('div');
+              el.className = 'px-badge';
+              el.innerText = b.i + ' ' + b.n;
+              elBadges.appendChild(el);
+            }
+          });
+        }
+      } catch {}
+
+      // Rotating messages
+      const messages = [
+        '> PROTOCOL STATUS: ACTIVE. ROUTING INTELLIGENCE: ONLINE.',
+        '> BASE CHAIN: SYNCHRONIZED. BLOCK CONFIRMATION: NOMINAL.',
+        '> LIQUIDITY POOL: LOCKED PERMANENTLY. RUG VECTOR: ZERO.',
+        '> NEURAL ROUTING LAYER: COMPUTING OPTIMAL PATHS.',
+        '> BLAZEPHOENIX HUB: POOL REGISTRY SYNCHRONIZED.',
+        '> MARKET DATA: STREAMING FROM BASE CHAIN.',
+        '> MEV PROTECTION: COMMIT-REVEAL ACTIVE.',
+        '> TEAM VESTING: ON-CHAIN. IMMUTABLE. TRANSPARENT.'
+      ];
+      let mIdx = 0;
+      if (elMsg) {
         setInterval(() => {
-            const word = ["WAKE UP", "MATRIX", "ESCAPE", "TRUTH"][Math.floor(Math.random()*4)];
-            const el = document.createElement('div'); el.className = 'subliminal-msg'; el.innerText = word;
-            el.style.left = Math.random()*80+10+'%'; el.style.top = Math.random()*80+10+'%';
-            document.getElementById('subliminal-layer').appendChild(el);
-            setTimeout(() => { el.style.opacity='0.08'; setTimeout(() => el.remove(), 100); }, 10);
-        }, 7000);
-    </script>
+          elMsg.innerText = messages[mIdx % messages.length];
+          mIdx++;
+        }, 4000);
+      }
+    }
+
+    // ---- INIT ----
+    if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+
+    function unlockPage() {
+      window.scrollTo(0, 0);
+      document.body.classList.remove('noscroll');
+      document.documentElement.style.overflow = 'auto';
+      document.documentElement.style.overflowY = 'auto';
+      document.body.style.overflow = 'auto';
+      document.body.style.overflowY = 'auto';
+      document.body.style.position = '';
+      document.body.style.height = '';
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      window.scrollTo(0, 0);
+      renderBillionaires();
+      initPhoenixModule();
+      updateUI();
+      fetchMarketData();
+      fetchLiveTransactions();
+      setInterval(fetchMarketData, 30000);
+      setInterval(fetchLiveTransactions, 30000);
+      setTimeout(unlockPage, 800);
+    });
+
+    setTimeout(unlockPage, 9500);
+    window.onbeforeunload = () => window.scrollTo(0, 0);
+  </script>
+
+  <!-- Phoenix module burn2 box (locked stats) -->
+  <div id="burn2-stat-box" style="display:none;">
+    <!-- removed, now shown in main vault section -->
+  </div>
+
 </body>
 </html>
