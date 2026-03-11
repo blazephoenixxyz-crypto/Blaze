@@ -662,31 +662,25 @@
 
     .act img {
       width: 100%;
-      aspect-ratio: 16/7;
-      object-fit: cover;
-      object-position: center 20%;
+      height: auto;
+      display: block;
       border-radius: 10px;
       margin-bottom: 25px;
       border: 2px solid rgba(0,82,255,0.4);
-      display: block;
-      /* Performance: hint browser to decode async */
-      content-visibility: auto;
+      object-fit: cover;
+      object-position: center 20%;
     }
-    @media(max-width:480px){
-      /* phones: portrait — tighter crop */
-      .act img { aspect-ratio: 16/9; object-position: center 15%; }
+    /* Tablet */
+    @media(min-width: 768px) {
+      .act img { max-height: 340px; }
     }
-    @media(min-width:481px) and (max-width:768px){
-      /* large phones / small tablets */
-      .act img { aspect-ratio: 16/8; }
+    /* Laptop */
+    @media(min-width: 1024px) {
+      .act img { max-height: 240px; }
     }
-    @media(min-width:769px) and (max-width:1199px){
-      /* tablets / laptop */
-      .act img { aspect-ratio: 16/6; }
-    }
-    @media(min-width:1200px){
-      /* desktop */
-      .act img { aspect-ratio: 16/5; }
+    /* Large desktop */
+    @media(min-width: 1440px) {
+      .act img { max-height: 280px; }
     }
 
     .act:hover img { border-color: #ff4500; }
@@ -2430,10 +2424,8 @@
       <h3 style="color:#ff4500;font-family:'Bebas Neue';font-size:1.8rem;margin-bottom:24px;letter-spacing:3px;">CONTACT & SUPPORT</h3>
 
       <p style="color:#aaa;font-size:0.95rem;margin-bottom:6px;">Official Project Email:</p>
-      <a href="mailto:blazephoenixxyz@proton.me"
-         style="font-family:'JetBrains Mono',monospace;font-size:0.9rem;color:#ff4500;word-break:break-all;background:rgba(0,0,0,0.3);padding:14px 20px;border-radius:8px;display:inline-block;margin-bottom:28px;text-decoration:none;border:1px solid rgba(255,69,0,0.3);transition:all 0.3s;"
-         onmouseover="this.style.borderColor='#ff4500'" onmouseout="this.style.borderColor='rgba(255,69,0,0.3)'">
-        blazephoenixxyz@proton.me
+      <a href="/cdn-cgi/l/email-protection#187a7479627d6870777d76716060616258686a776c777636757d" style="font-family:'JetBrains Mono',monospace;font-size:0.9rem;color:#ff4500;word-break:break-all;background:rgba(0,0,0,0.3);padding:14px 20px;border-radius:8px;display:inline-block;margin-bottom:28px;text-decoration:none;border:1px solid rgba(255,69,0,0.3);transition:all 0.3s;" onmouseover="this.style.borderColor='#ff4500'" onmouseout="this.style.borderColor='rgba(255,69,0,0.3)'">
+        <span class="__cf_email__" data-cfemail="c5a7a9a4bfa0b5adaaa0abacbdbdbcbf85b5b7aab1aaabeba8a0">[email&#160;protected]</span>
       </a>
 
       <p style="color:#aaa;font-size:0.95rem;margin-bottom:6px;">Support Wallet (Base / ETH):</p>
@@ -2455,7 +2447,7 @@
   <div id="google_translate_element_fixed" style="position:fixed;bottom:20px;right:20px;z-index:1000;display:none;"></div>
 
   <!-- Google Translate -->
-  <script type="text/javascript">
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script type="text/javascript">
     function googleTranslateElementInit() {
       new google.translate.TranslateElement({
         pageLanguage: 'en',
@@ -2732,13 +2724,4 @@
     });
 
     setTimeout(unlockPage, 9500);
-    window.onbeforeunload = () => window.scrollTo(0, 0);
-  </script>
-
-  <!-- Phoenix module burn2 box (locked stats) -->
-  <div id="burn2-stat-box" style="display:none;">
-    <!-- removed, now shown in main vault section -->
-  </div>
-
-</body>
-</html>
+    window.onb
