@@ -612,10 +612,13 @@
     .act:hover { border-color: #ff4500; transform: translateX(8px); box-shadow: 0 0 30px rgba(255,69,0,0.2); }
 
     .act img {
-      width: 100%; height: auto;
+      width: 100%; max-height: 260px; object-fit: cover;
       border-radius: 10px;
       margin-bottom: 25px;
       border: 2px solid rgba(0,82,255,0.4);
+    }
+    @media(max-width:600px){
+      .act img { max-height: 180px; }
     }
 
     .act:hover img { border-color: #ff4500; }
@@ -1659,6 +1662,36 @@
       </div>
     </section>
 
+    <!-- PROTOCOL CTA BANNER -->
+    <section style="margin:60px 0;padding:0;">
+      <div style="background:linear-gradient(135deg,rgba(0,82,255,0.12) 0%,rgba(255,69,0,0.10) 100%);border:2px solid rgba(255,69,0,0.5);border-radius:18px;padding:50px 30px;text-align:center;position:relative;overflow:hidden;">
+        <!-- Glow bg -->
+        <div style="position:absolute;inset:0;background:radial-gradient(ellipse at 50% 0%,rgba(255,69,0,0.12),transparent 70%);pointer-events:none;"></div>
+        <div style="position:relative;z-index:1;">
+          <div style="color:#ff4500;font-weight:900;letter-spacing:4px;font-size:0.8rem;text-transform:uppercase;margin-bottom:14px;">⚡ BLAZEPHOENIX PROTOCOL · LIVE ON BASE</div>
+          <h2 style="font-family:'Bebas Neue',sans-serif;font-size:clamp(2.2rem,7vw,4rem);letter-spacing:4px;color:#fff;margin:0 0 20px;text-shadow:0 0 30px rgba(255,69,0,0.4);line-height:1.1;">THE SMARTEST ROUTE.<br><span style="color:#ff4500;">EVERY SINGLE TRADE.</span></h2>
+          <p style="color:#ccc;font-size:1.05rem;max-width:680px;margin:0 auto 30px;line-height:1.75;">
+            Three parallel routes. Eight hops each. Neural-guided capital allocation that computes the optimal split across every liquidity pool on Base — in real time, on every swap. Positive slippage goes back to you. MEV bots get nothing. Zero tax. Permanent liquidity floor.
+            <br><br>
+            <strong style="color:#fff;">This is not a DEX. This is the layer above every DEX.</strong>
+          </p>
+          <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:12px;margin-bottom:36px;">
+            <span style="padding:8px 16px;border-radius:999px;border:1px solid rgba(0,243,255,0.5);color:#00f3ff;font-size:0.8rem;font-weight:700;letter-spacing:1px;">⚡ 3 Routes × 8 Hops</span>
+            <span style="padding:8px 16px;border-radius:999px;border:1px solid rgba(255,183,0,0.5);color:#ffb700;font-size:0.8rem;font-weight:700;letter-spacing:1px;">🧠 Neural Allocation</span>
+            <span style="padding:8px 16px;border-radius:999px;border:1px solid rgba(0,255,65,0.4);color:#00ff41;font-size:0.8rem;font-weight:700;letter-spacing:1px;">🛡️ MEV Protected</span>
+            <span style="padding:8px 16px;border-radius:999px;border:1px solid rgba(255,69,0,0.5);color:#ff7755;font-size:0.8rem;font-weight:700;letter-spacing:1px;">🔒 75B Locked</span>
+            <span style="padding:8px 16px;border-radius:999px;border:1px solid rgba(255,255,255,0.2);color:#aaa;font-size:0.8rem;font-weight:700;letter-spacing:1px;">💸 0% Tax</span>
+          </div>
+          <a href="#" target="_blank" style="display:inline-block;padding:18px 48px;background:linear-gradient(135deg,#0052ff,#ff4500);border-radius:12px;color:#fff;font-family:'Bebas Neue',sans-serif;font-size:1.5rem;letter-spacing:4px;text-decoration:none;box-shadow:0 0 40px rgba(255,69,0,0.4);transition:all 0.3s;border:none;"
+             onmouseover="this.style.transform='scale(1.05)';this.style.boxShadow='0 0 60px rgba(255,69,0,0.7)'"
+             onmouseout="this.style.transform='scale(1)';this.style.boxShadow='0 0 40px rgba(255,69,0,0.4)'">
+            🚀 LAUNCH APP
+          </a>
+          <p style="color:#555;font-size:0.78rem;margin-top:16px;font-family:'JetBrains Mono',monospace;">DEPLOYED · BASE CHAIN L2 · BUSL-1.1 · MARCH 2026</p>
+        </div>
+      </div>
+    </section>
+
     <!-- ACTS OF REBELLION -->
     <section>
       <h2>THE LEGEND: 5 ACTS OF REBELLION</h2>
@@ -2197,16 +2230,16 @@
               <div class="tok-foot">Status: <span class="ok">COMMUNITY ONLY</span></div>
             </div>
 
-            <!-- 10% Partners -->
+            <!-- 5% Partners -->
             <div class="tok-card">
               <div class="tok-top">
-                <div class="tok-pct">10%</div>
+                <div class="tok-pct">5%</div>
                 <div class="tok-name">PARTNERS & GROWTH</div>
               </div>
               <div class="tok-bar">
-                <div class="tok-bar-fill" style="width:10%;background:linear-gradient(90deg,#0052ff,#00f3ff);"></div>
+                <div class="tok-bar-fill" style="width:5%;background:linear-gradient(90deg,#0052ff,#00f3ff);"></div>
               </div>
-              <p class="tok-desc">10,000,000,000 $BZPX allocated to exchange listings, strategic partnerships, and ecosystem marketing.</p>
+              <p class="tok-desc">5,000,000,000 $BZPX allocated to exchange listings, strategic partnerships, and ecosystem marketing.</p>
               <div class="tok-foot">Status: <span class="warn">CONTROLLED DEPLOYMENT</span></div>
             </div>
           </div>
